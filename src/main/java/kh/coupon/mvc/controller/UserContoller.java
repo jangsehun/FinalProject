@@ -12,6 +12,7 @@ public class UserContoller {
 	기능 : 요청에 따라 해당 뷰로 보내주는 기능을 테스트 하는 메소드
 	사용하는 DB 테이블 : -
 	부가 설명 :  WEB-INF/views/userViews 폴더 안에 있는 userControllerTest.jsp 로 보내준다. */
+	//민이꺼 가지 테스트중
 	@RequestMapping("test")
 	public String test() {
 		return "userViews/userControllerTest";
