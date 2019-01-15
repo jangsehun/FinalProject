@@ -18,5 +18,7 @@ public class UserContoller {
 		return "userViews/userControllerTest";
 	}
 
-	/*단비 가지 테스트*/
+	/*단비 가지 테스트
+	 * 단비 가지 두번째 테스트 입니다.
+	 * */
 }
