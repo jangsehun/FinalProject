@@ -19,8 +19,13 @@
 	<h3>컨트롤러 TEST</h3>
 	<a href="home/test">homeControllerTest</a> <br>
 	<a href="user/test">userControllerTest</a> <br>
+	
+	
+	
 	<a href="academy/test">academyControllerTest</a> <br>
 	<a href="client/test">clientControllerTest</a> <br>
+	
+	
 	
 </body>
 </html>
