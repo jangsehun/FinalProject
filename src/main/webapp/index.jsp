@@ -22,9 +22,9 @@
 	<input type="button" value="회원가입">
 </form>
 
-	<h1>이번엔 merge!!!</h1>
+	<h3>이번엔 merge!!!</h3>
 
-	<h3>컨트롤러 TEST</h3>
+	<h1>컨트롤러 TEST</h1>
 	<a href="home/test">homeControllerTest</a> <br>
 	<a href="user/test">userControllerTest</a> <br>
 	<a href="academy/test">academyControllerTest</a> <br>
