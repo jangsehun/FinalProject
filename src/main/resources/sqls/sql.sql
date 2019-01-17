@@ -26,6 +26,11 @@
 ====================================================
 */
 
+DROP TABLE member;
+DROP SEQUENCE member_seq;
+
+CREATE SEQUENCE member_seq;
+
 CREATE TABLE member(
 	member_no	NUMBER	NOT NULL,									
 	member_name	VARCHAR2(500)	NOT NULL,						
@@ -36,13 +41,21 @@ CREATE TABLE member(
 	member_date_create	DATE	NOT NULL,						
 	member_date_update	DATE	NULL,							
 	member_nickname	VARCHAR2(500)	NULL,						
-	member_class	VARCHAR2(500)	NOT NULL,						
+	member_class	VARCHAR2(500)	NULL,						
 	member_email	VARCHAR2(500)	NOT NULL,						
 	member_role	VARCHAR2(500)	NOT NULL,						
 	member_withdraw	VARCHAR2(500)	NULL,						
 	member_date_withdraw	DATE	NULL,							
-	member_verification	VARCHAR2(500)	NOT NULL				
+	member_verification	VARCHAR2(500)	NOT NULL,
+	CONSTRAINT member_pk PRIMARY KEY(member_no),
+	CONSTRAINT member_uq_id UNIQUE(member_id),
+	CONSTRAINT member_uq_phone UNIQUE(member_phone),
+	CONSTRAINT member_uq_nickname UNIQUE(member_nickname),
+	CONSTRAINT member_uq_email UNIQUE(member_email),
+	CONSTRAINT member_role_chk CHECK(member_role IN('ROLE_USER','ROLE_CLIENT'))
 );
+
+SELECT * FROM member
 
 CREATE TABLE client (
 	client_no	NUMBER	NOT NULL,								

@@ -1,11 +1,19 @@
 package kh.coupon.mvc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kh.coupon.mvc.biz.MemberBiz;
+import kh.coupon.mvc.dto.MemberDto;
 
 @Controller
 @RequestMapping("user")
 public class UserContoller {
+	
+
+	
 	
 /*	작성자 : 장세훈
 	작성 날짜 : 19.01.15
@@ -16,5 +24,8 @@ public class UserContoller {
 	public String test() {
 		return "userViews/userControllerTest";
 	}
+		
+	
+	
 
 }
