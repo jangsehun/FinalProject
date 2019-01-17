@@ -11,5 +11,5 @@ public class ClientController {
 	public String test() {
 		return "clientViews/clientControllerTest";
 	}
-
+//	check
 }
