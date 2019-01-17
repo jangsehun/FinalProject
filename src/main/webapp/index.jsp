@@ -20,7 +20,7 @@
 	<a href="home/test">homeControllerTest</a> <br>
 	<a href="user/test">userControllerTest</a> <br>
 	<a href="academy/test">academyControllerTest</a> <br>
-	<a href="client/test">clientControllerTest</a> <br>
+	<a href="client/clientMain">clientMain</a> <br>
 	
 </body>
 </html>
