@@ -9,7 +9,8 @@ public class ClientController {
 	
 	@RequestMapping("test")
 	public String test() {
+//		create commit
 		return "clientViews/clientControllerTest";
 	}
-
+//	check
 }
