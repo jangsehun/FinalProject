@@ -25,24 +25,29 @@
 	https://www.erdcloud.com/d/HnGb4TFv5b4sBdf2s
 ====================================================
 */
-
+DROP TABLE member;
+DROP SEQUENCE member_seq;
+CREATE SEQUENCE member_seq;
 CREATE TABLE member(
-	member_no	NUMBER	NOT NULL,									
-	member_name	VARCHAR2(500)	NOT NULL,						
-	member_id	VARCHAR2(500)	NOT NULL,							
-	member_password	VARCHAR2(500)	NOT NULL,					
-	member_profile	VARCHAR2(500)	NULL,						
-	member_phone	VARCHAR2(500)	NOT NULL,						
-	member_date_create	DATE	NOT NULL,						
-	member_date_update	DATE	NULL,							
-	member_nickname	VARCHAR2(500)	NULL,						
-	member_class	VARCHAR2(500)	NOT NULL,						
-	member_email	VARCHAR2(500)	NOT NULL,						
-	member_role	VARCHAR2(500)	NOT NULL,						
-	member_withdraw	VARCHAR2(500)	NULL,						
-	member_date_withdraw	DATE	NULL,							
-	member_verification	VARCHAR2(500)	NOT NULL				
+	member_no NUMBER PRIMARY KEY,									
+	member_name	 VARCHAR2(500) NOT NULL,						
+	member_id  VARCHAR2(500)	NOT NULL,							
+	member_password 	VARCHAR2(500) NOT NULL,					
+	member_profile  VARCHAR2(500) NULL,						
+	member_phone  VARCHAR2(500) NOT NULL,						
+	member_date_create  DATE NOT NULL,						
+	member_date_update  DATE NULL,							
+	member_nickname	 VARCHAR2(500) NULL,						
+	member_class  VARCHAR2(500) NOT NULL,						
+	member_email  VARCHAR2(500) NOT NULL,						
+	member_role	 VARCHAR2(500) NOT NULL,						
+	member_withdraw	 VARCHAR2(500) NULL,						
+	member_date_withdraw  DATE NULL,							
+	member_verification	 VARCHAR2(500) NOT NULL				
 );
+INSERT INTO member VALUES(member_seq.NEXTVAL,'이민이','1111','1111','','01087386313',SYSDATE,'','가지가지','Q오전','mc2923@naver.com','role_member','','','학생');
+COMMIT;
+SELECT * FROM member;
 
 CREATE TABLE client (
 	client_no	NUMBER	NOT NULL,								
@@ -152,3 +157,48 @@ CREATE TABLE student (
 	student_phone	VARCHAR2(11)	NOT NULL,					 
 	student_class	VARCHAR2(5)	NOT NULL						
 );
+
+/*
+ *  작성자 : 이민이
+ *  작성일 : 2019-01-15
+ *  제목 : 이용후기 게시판 테이블
+ *  (게시판번호,제목,내용,작성자,작성일,수정일,조회수)
+ */
+DROP TABLE review_board;
+DROP SEQUENCE review_board_seq;
+CREATE SEQUENCE review_board_seq;
+CREATE TABLE review_board (
+	review_no NUMBER NOT NULL,
+	review_category VARCHAR2(100) NOT NULL,
+	review_title VARCHAR2(100) NOT NULL,
+	review_content VARCHAR2(1024) NOT NULL,
+	review_writer VARCHAR2(10) NOT NULL,
+	review_date_create DATE NOT NULL,
+	review_date_update DATE NULL,
+	review_count NUMBER NULL,
+	review_like NUMBER NULL
+);
+INSERT INTO review_board VALUES(review_board_seq.NEXTVAL,'기타','이용후기게시판 이용안내','이용후기게시판 내용부분 테스트중','이민이',SYSDATE,'','0','0');
+COMMIT;
+SELECT * FROM review_board;
+
+
+--------실험해보기----------
+DROP TABLE member;
+DROP SEQUENCE member_seq;
+CREATE SEQUENCE member_seq;
+CREATE TABLE member(
+	member_no NUMBER PRIMARY KEY,									
+	member_name	 VARCHAR2(500) NOT NULL,						
+	member_id  VARCHAR2(500)	NOT NULL,							
+	member_password 	VARCHAR2(500) NOT NULL
+);
+INSERT INTO member VALUES(member_seq.NEXTVAL,'이민이','1111','1111');
+COMMIT;
+SELECT * FROM member;
+
+
+
+
+
+

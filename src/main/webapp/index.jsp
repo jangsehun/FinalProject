@@ -8,12 +8,12 @@
 </head>
 <body>
 <h1>INDEX PAGE</h1>
-<form action="home/login" method="post">
-	ID<input type="text" name="user_id"> <br>
-	PW<input type="text" name="user_pw"> <br>
+<form action="user/login" method="post">
+	ID<input type="text" name="member_id"> <br>
+	PW<input type="text" name="member_password"> <br>
 	
 	<input type="submit" value="로그인">
-	<input type="button" value="회원가입">
+	<input type="button" value="회원가입" onclick="location.href='user/registform'">
 </form>
 
 	<h3>컨트롤러 TEST</h3>
