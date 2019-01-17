@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,12 +20,9 @@
 	
 	<input type="submit" value="로그인">
 	<input type="button" value="회원가입">
-<<<<<<< HEAD
-	
-	<h1>테스트 중</h1>
-=======
->>>>>>> refs/remotes/origin/master
 </form>
+
+	<h1>이번엔 merge!!!</h1>
 
 	<h3>컨트롤러 TEST</h3>
 	<a href="home/test">homeControllerTest</a> <br>
