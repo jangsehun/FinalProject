@@ -159,8 +159,36 @@ CREATE TABLE student (
 );
 
 
+DROP TABLE MEMBER;
+DROP SEQUENCE member_seq;
+
+CREATE SEQUENCE member_seq;
+
+CREATE TABLE member(
+   member_no NUMBER PRIMARY KEY,                           
+   member_name    VARCHAR2(500) NOT NULL,                  
+   member_id  VARCHAR2(500)   NOT NULL,                     
+   member_password    VARCHAR2(500) NOT NULL
+);
+INSERT INTO member VALUES(member_seq.NEXTVAL,'성원실','A','123');
+SELECT * FROM member;
+
+DROP SEQUENCE testuser_seq;
+DROP TABLE testuser;
 
 
 
-DROP SEQUENCE board_seq;
-DROP TABLE board;
+
+CREATE SEQUENCE complain_board_seq;
+CREATE TABLE complain_board (
+	complain_no	NUMBER	NOT NULL PRIMARY KEY,	*		
+	user_no	NUMBER	NOT NULL,	
+	complain_title	VARCHAR2(500)	NOT NULL,	*					
+	complain_content	VARCHAR2(3000)	NOT NULL,					
+	complain_date_create	DATE	NOT NULL,*						
+	complain_date_update	DATE	NULL,
+	complain_category	VARCHAR2(500)	NOT NULL,	*				
+	complain_count	NUMBER	NULL,*
+	complain_like NUMBER NULL*
+);
+SELECT * FROM complain_board;

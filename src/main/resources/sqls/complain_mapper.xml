@@ -3,7 +3,7 @@
 <mapper namespace="complain">
 
    <select id="complain_list" resultType="ComplainDto">
-      SELECT complain_no,complain_category,complain_title,complain_date_create,complain_count,complain_like FROM complain_board ORDER BY complain_no DESC
+      SELECT * FROM complain_board ORDER BY complain_no DESC
    </select>
    
    <select id="complain_detail" resultType="ComplainDto" parameterType="int">

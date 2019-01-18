@@ -95,7 +95,7 @@ public class ComplainDto {
 	public void setComplain_count(int complain_count) {
 		this.complain_count = complain_count;
 	}
-
+ 
 	public int getComplain_like() {
 		return complain_like;
 	}

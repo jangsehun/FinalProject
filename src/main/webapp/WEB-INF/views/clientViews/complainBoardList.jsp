@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -18,52 +18,52 @@ $(document).ready(function(){
     
 });
 </script>
-<meta charset="UTF-8">
-<title>ê±´ì˜ì‚¬í•­ ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸</title>
+<meta charset="EUC-KR">
+<title>°ÇÀÇ»çÇ× °Ô½ÃÆÇ ÆäÀÌÁö</title>
 </head>
 <body>
 
-<%-- ${regist_dto.member_name }ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.<br> --%>
-   <h1>ê±´ì˜ì‚¬í•­ ê²Œì‹œíŒ</h1>
-   <form action="comlpain_insertform">
+${regist_dto.member_name }´Ô È¯¿µÇÕ´Ï´Ù.<br>
+   <h1>ÀÌ¿ëÈÄ±â °Ô½ÃÆÇ</h1>
+   <form action="complain_insertform">
    <select id="condition">
-      <option>ì „ì²´</option>
+      <option>ÀüÃ¼</option>
       <option>7Gram</option>
-      <option>ë§¥ì£¼ì°½ê³ </option>
-      <option>ìš”ìˆ í¬ì°¨</option>
+      <option>¸ÆÁÖÃ¢°í</option>
+      <option>¿ä¼úÆ÷Â÷</option>
    </select>
    <table border="1">
       <tr>
-         <th>ë²ˆí˜¸</th>
-         <th>ë¶„ë¥˜</th>
-         <th>ì œëª©</th>
-         <th>ì‘ì„±ì¼</th>
-         <th>ì¡°íšŒìˆ˜</th>
-         <th>ì¢‹ì•„ìš”</th>
+         <th>¹øÈ£</th>
+         <th>ºĞ·ù</th>
+         <th>Á¦¸ñ</th>
+         <th>ÀÛ¼ºÀÏ</th>
+         <th>Á¶È¸¼ö</th>
+         <th>ÁÁ¾Æ¿ä</th>
       </tr>
          <c:choose>
             <c:when test="${empty list }">
                <tr>
-                  <td colspan="1">-------ì‘ì„±í•œ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤-------</td>
+                  <td colspan="1">-------ÀÛ¼ºÇÑ ±ÛÀÌ ¾ø½À´Ï´Ù-------</td>
                </tr>
             </c:when>
             <c:otherwise>
                <c:forEach items="${list }" var="dto">
                   <tr>
-                     <td>${dto.comlpain_no }</td>
-                     <td>${dto.comlpain_category }</td>
-                     <td><a href="comlpain_detail?comlpain_no=${dto.comlpain_no }">${dto.comlpain_title }</a></td>
-                     <td>${dto.comlpain_date_create }</td>
-                     <td>${dto.comlpain_count }</td>
-                     <td>${dto.comlpain_like }</td>
+                     <td>${dto.complain_no }</td>
+                     <td>${dto.complain_category }</td>
+                     <td><a href="complain_detail?complain_no=${dto.complain_no }">${dto.complain_title }</a></td>
+                     <td>${dto.complain_date_create }</td>
+                     <td>${dto.complain_count }</td>
+                     <td>${dto.complain_like }</td>
                   </tr>
                </c:forEach>
             </c:otherwise>
          </c:choose>
       </table>
    <hr>
-   <input type="button" value="ì œíœ´ì—…ì²´ ë©”ì¸í˜ì´ì§€ë¡œ" onclick="location.href='clientMain'"/>
-   <input type="submit" value="ê±´ì˜ì‚¬í•­ ì‘ì„±"/>
+   <input type="button" value="Á¦ÈŞ¾÷Ã¼ ¸ŞÀÎÆäÀÌÁö·Î" onclick="location.href='clientMain'"/>
+   <input type="submit" value="°ÇÀÇ»çÇ×ÀÛ¼º"/>
    </form>
 </body>
 </html>

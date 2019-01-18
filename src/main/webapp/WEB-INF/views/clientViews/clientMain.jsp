@@ -58,9 +58,9 @@
 							<h4 class="text-uppercase mb-2">커뮤니티</h4>
 						</button>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="">공지사항</a>
-							<a class="dropdown-item" href="client/complain_board_list">건의사항</a>
-							<a class="dropdown-item" href="">이용후기</a>
+							<a class="dropdown-item" href=""><strong style="color: dark;">공지사항</strong></a>
+							<a class="dropdown-item" href="client/complain_board_list"><strong style="color: dark;">건의사항</strong></a>
+							<a class="dropdown-item" href=""><strong style="color: dark;">이용후기</strong></a>
 						</div>
 					</div>
 
@@ -76,6 +76,7 @@
 					</div>
 				</div>
 				</div>
+				<h4 class="text-uppercase mb-2">${regist_dto.member_name }님 환영합니다.</h4>
 
 	</nav>
 
@@ -85,7 +86,7 @@
 		<div class="container">
 			<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/profile.png" alt="">
 			<h1 class="text-uppercase mb-0">
-				KH 제휴쿠폰 홈페이지 입니다.
+				KH 제휴쿠폰 홈페이지 입니다.<br>
 			</h1>
 		</div>
 	</header>
@@ -337,3 +338,7 @@
 
 
 </html>
+
+
+
+

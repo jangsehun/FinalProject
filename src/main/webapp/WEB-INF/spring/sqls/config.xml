@@ -3,6 +3,7 @@
 <configuration>
 	<!-- 각 Dto들을 잡아주면된다. -->
 	<typeAliases>
+		<typeAlias type="kh.coupon.mvc.dto.RegistDto" alias="RegistDto"/>
 		<typeAlias type="kh.coupon.mvc.dto.ComplainDto" alias="ComplainDto"/>
 	</typeAliases>
 	
@@ -11,6 +12,7 @@
 		<mapper resource="/sqls/user_mapper.xml"/>
 		<mapper resource="/sqls/academy_mapper.xml"/>
 		<mapper resource="/sqls/client_mapper.xml"/>
+		<mapper resource="/sqls/member_mapper.xml"/>
 		<mapper resource="/sqls/complain_mapper.xml"/>
 	</mappers>
 </configuration>
