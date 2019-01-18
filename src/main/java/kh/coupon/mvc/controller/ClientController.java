@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kh.coupon.mvc.biz.RegistBiz;
 import kh.coupon.mvc.biz.ComplainBiz;
+import kh.coupon.mvc.dto.ComplainDto;
 import kh.coupon.mvc.dto.RegistDto;
 
 @Controller
@@ -21,6 +22,7 @@ public class ClientController {
 	@Autowired
 	private ComplainBiz complain_biz;
 
+	
 	@RequestMapping("clientMain")
 	public String test() {
 		return "clientViews/clientMain";
@@ -58,6 +60,56 @@ public class ClientController {
 		model.addAttribute("list", complain_biz.complain_list());
 		return "clientViews/complainBoardList";
 	}
+	
+	   
+	   @RequestMapping("complain_detail")
+	   public String complain_detail(Model model,int complain_no) {
+		   complain_biz.updateHit(complain_no);
+	      model.addAttribute("dto",complain_biz.complain_detail(complain_no));
+	      return "clientViews/complainBoardDetail";
+	   }
+	   
+	   @RequestMapping(value="complain_insertform")
+	   public String complain_insertform() {
+	      return "clientViews/complainBoardInsert";
+	   }
+	   
+	   @RequestMapping(value="complain_insert", method=RequestMethod.POST)
+	   public String complain_insert(Model model,ComplainDto complain_dto) {
+	      int res = complain_biz.complain_insert(complain_dto);
+	      if(res>0) {
+	         model.addAttribute("list",complain_biz.complain_list());
+	         return "clientViews/complainBoardList";
+	      } else {
+	         return "clientViews/complainBoardInsert";
+	      }
+	   }
+	   
+	   @RequestMapping("complain_updateform")
+	   public String complain_updateform(Model model,int complain_no) {
+	      model.addAttribute("dto",complain_biz.complain_detail(complain_no));
+	      System.out.println(complain_no);
+	      return "clientViews/complainBoardUpdate";
+	   }
+	   
+	   @RequestMapping(value="complain_update", method=RequestMethod.POST)
+	   public String complain_update(Model model,ComplainDto complain_dto,int complain_no) {
+	      int res = complain_biz.complain_update(complain_dto);
+	      if(res>0) {
+	         model.addAttribute("dto",complain_biz.complain_detail(complain_no));
+	         return "clientViews/complainBoardDetail";
+	      } else {
+	         return "clientViews/complainBoardUpdate";
+	      }
+	   }
+	   
+	   @RequestMapping("complain_delete")
+	   public String complain_delete(Model model,int complain_no) {
+		   complain_biz.complain_delete(complain_no);
+	      model.addAttribute("list",complain_biz.complain_list());
+	      return "clientViews/complainBoardList";
+	   }
+
 
 
 }

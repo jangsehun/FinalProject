@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -18,33 +18,33 @@ $(document).ready(function(){
     
 });
 </script>
-<meta charset="EUC-KR">
-<title>°ÇÀÇ»çÇ× °Ô½ÃÆÇ ÆäÀÌÁö</title>
+<meta charset="UTF-8">
+<title>ê±´ì˜ì‚¬í•­ ê²Œì‹œíŒ íŽ˜ì´ì§€</title>
 </head>
 <body>
 
-${regist_dto.member_name }´Ô È¯¿µÇÕ´Ï´Ù.<br>
-   <h1>ÀÌ¿ëÈÄ±â °Ô½ÃÆÇ</h1>
+${regist_dto.member_name }ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.<br>
+   <h1>ì´ìš©í›„ê¸° ê²Œì‹œíŒ</h1>
    <form action="complain_insertform">
    <select id="condition">
-      <option>ÀüÃ¼</option>
+      <option>ì „ì²´</option>
       <option>7Gram</option>
-      <option>¸ÆÁÖÃ¢°í</option>
-      <option>¿ä¼úÆ÷Â÷</option>
+      <option>ë§¥ì£¼ì°½ê³ </option>
+      <option>ìš”ìˆ í¬ì°¨</option>
    </select>
    <table border="1">
       <tr>
-         <th>¹øÈ£</th>
-         <th>ºÐ·ù</th>
-         <th>Á¦¸ñ</th>
-         <th>ÀÛ¼ºÀÏ</th>
-         <th>Á¶È¸¼ö</th>
-         <th>ÁÁ¾Æ¿ä</th>
+         <th>ë²ˆí˜¸</th>
+         <th>ë¶„ë¥˜</th>
+         <th>ì œëª©</th>
+         <th>ìž‘ì„±ì¼</th>
+         <th>ì¡°íšŒìˆ˜</th>
+         <th>ì¢‹ì•„ìš”</th>
       </tr>
          <c:choose>
             <c:when test="${empty list }">
                <tr>
-                  <td colspan="1">-------ÀÛ¼ºÇÑ ±ÛÀÌ ¾ø½À´Ï´Ù-------</td>
+                  <td colspan="1">-------ìž‘ì„±í•œ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤-------</td>
                </tr>
             </c:when>
             <c:otherwise>
@@ -62,8 +62,8 @@ ${regist_dto.member_name }´Ô È¯¿µÇÕ´Ï´Ù.<br>
          </c:choose>
       </table>
    <hr>
-   <input type="button" value="Á¦ÈÞ¾÷Ã¼ ¸ÞÀÎÆäÀÌÁö·Î" onclick="location.href='clientMain'"/>
-   <input type="submit" value="°ÇÀÇ»çÇ×ÀÛ¼º"/>
+   <input type="button" value="ì œíœ´ì—…ì²´ ë©”ì¸íŽ˜ì´ì§€ë¡œ" onclick="location.href='clientMain'"/>
+   <input type="submit" value="ê±´ì˜ì‚¬í•­ìž‘ì„±"/>
    </form>
 </body>
 </html>
