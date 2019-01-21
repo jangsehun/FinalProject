@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% request.setCharacterEncoding("UTF-8"); %>
+<% response.setContentType("text/html; charset=UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +10,10 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-  
+	  
     $("#condition").change(function(){      
        var condition = $("#condition option:selected").val();
-       var u_no = $(".uno").attr("id");
-       //alert(u_no);      
-       location.href="RBoardController?command=rboard_search&condition="+condition+"&u_no="+u_no;   
+       location.href="complain_search?condition="+condition;   
     });
     
 });
@@ -24,13 +24,13 @@ $(document).ready(function(){
 <body>
 
 ${regist_dto.member_name }님 환영합니다.<br>
-   <h1>이용후기 게시판</h1>
+   <h1>건의사항 게시판</h1>
    <form action="complain_insertform">
    <select id="condition">
-      <option>전체</option>
-      <option>7Gram</option>
-      <option>맥주창고</option>
-      <option>요술포차</option>
+		<option value="전체" <c:if test="${Name eq '전체'}">selected</c:if>>전체</option>
+		<option value="7Gram" <c:if test="${param.condition=='7Gram'}">selected</c:if>>7Gram</option>
+		<option value="맥주창고" <c:if test="${param.condition=='맥주창고'}">selected</c:if>>맥주창고</option>
+		<option value="요술포차" <c:if test="${param.condition=='요술포차'}">selected</c:if>>요술포차</option>
    </select>
    <table border="1">
       <tr>

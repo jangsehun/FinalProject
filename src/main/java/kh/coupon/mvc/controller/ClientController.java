@@ -1,5 +1,6 @@
 package kh.coupon.mvc.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,21 +70,42 @@ public class ClientController {
 	      return "clientViews/complainBoardDetail";
 	   }
 	   
+	   
+		// 후기게시판에서 제휴업체 구분 검색
+		@RequestMapping("complain_search")
+		public String complain_search(Model model,HttpServletRequest request) {
+			String condition = request.getParameter("condition");
+			System.out.println("제휴업체구분 : " +condition);
+			if(condition.equals("7Gram")) {
+				model.addAttribute("list", complain_biz.complain_list_seven());			
+			} else if(condition.equals("맥주창고")) {
+				model.addAttribute("list", complain_biz.complain_list_bear());
+			} else if(condition.equals("요술포차")) {
+				model.addAttribute("list", complain_biz.complain_list_magic());
+			} else if(condition.equals("전체")){
+				model.addAttribute("list", complain_biz.complain_list());
+			}
+			return "clientViews/complainBoardList";
+		}
+	   
 	   @RequestMapping(value="complain_insertform")
 	   public String complain_insertform() {
 	      return "clientViews/complainBoardInsert";
 	   }
 	   
+		
 	   @RequestMapping(value="complain_insert", method=RequestMethod.POST)
-	   public String complain_insert(Model model,ComplainDto complain_dto) {
-	      int res = complain_biz.complain_insert(complain_dto);
-	      if(res>0) {
-	         model.addAttribute("list",complain_biz.complain_list());
-	         return "clientViews/complainBoardList";
-	      } else {
-	         return "clientViews/complainBoardInsert";
-	      }
-	   }
+		public String complain_insert(Model model,ComplainDto complain_dto,HttpServletRequest request) {
+			String condition = request.getParameter("condition");
+			System.out.println("건의사항 작성시 selected 값 : "+condition);
+			int res = complain_biz.complain_insert(complain_dto);
+			if(res>0) {
+				model.addAttribute("list",complain_biz.complain_list());
+				return "clientViews/complainBoardList";
+			} else {
+				return "clientViews/complainBoardInsert";
+			}
+		}
 	   
 	   @RequestMapping("complain_updateform")
 	   public String complain_updateform(Model model,int complain_no) {

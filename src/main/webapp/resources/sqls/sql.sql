@@ -182,7 +182,7 @@ DROP TABLE complain_board;
 CREATE SEQUENCE complain_board_seq;
 CREATE TABLE complain_board (
 	complain_no	NUMBER	NOT NULL PRIMARY KEY,	
-	mamber_no	NUMBER	NOT NULL,	
+	complain_writer	VARCHAR2(500)	NOT NULL,	
 	complain_title	VARCHAR2(500)	NOT NULL,				
 	complain_content	VARCHAR2(3000)	NOT NULL,					
 	complain_date_create	DATE	NOT NULL,			
@@ -193,6 +193,28 @@ CREATE TABLE complain_board (
 );
 
 
-INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,1,'글제목','글내용',SYSDATE,SYSDATE,'맥주창고',0,0);
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'작성자이름','건의사항 글제목','건의사항 글내용',SYSDATE,SYSDATE,'맥주창고',0,0);
 
 SELECT * FROM complain_board;
+
+
+
+
+
+
+CREATE SEQUENCE review_board_seq;
+CREATE TABLE review_board (
+	review_no	NUMBER	NOT NULL PRIMARY KEY,	
+	review_writer	VARCHAR2(500)	NOT NULL,	
+	review_title	VARCHAR2(500)	NOT NULL,				
+	review_content	VARCHAR2(3000)	NOT NULL,					
+	review_date_create	DATE	NOT NULL,			
+	review_date_update	DATE	NULL,
+	review_category	VARCHAR2(500)	NOT NULL,			
+	review_count	NUMBER	NULL,
+	review_like NUMBER NULL
+);
+
+INSERT INTO review_board VALUES(review_board_seq.NEXTVAL,'작성자이름','이용후기 글제목','이용후기 글내용',SYSDATE,SYSDATE,'맥주창고',0,0);
+
+SELECT * FROM review_board;

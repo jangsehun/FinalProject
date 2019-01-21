@@ -11,7 +11,7 @@ import kh.coupon.mvc.dto.RegistDto;
 
 @Repository
 public class RegistDaoImpl implements RegistDao {
-   
+
    @Autowired
    private SqlSessionTemplate sqlSessionTemplate;
 
@@ -21,7 +21,7 @@ public class RegistDaoImpl implements RegistDao {
       try {
          res = sqlSessionTemplate.selectList(namespace+"regist_list");
       } catch(Exception e) {
-         System.out.println("daoImpl regist_list 에러");
+         System.out.println("daoImpl regist_list �뿉�윭");
          e.printStackTrace();
       }
       return res;
@@ -36,9 +36,9 @@ public class RegistDaoImpl implements RegistDao {
    public int regist_insert(RegistDto dto) {
       int res = sqlSessionTemplate.insert(namespace+"regist_insert",dto);
       if(res>0) {
-         System.out.println("daoImpl regist_insert 성공");
+         System.out.println("daoImpl regist_insert �꽦怨�");
       } else {
-         System.out.println("daoImpl regist_insert 실패");
+         System.out.println("daoImpl regist_insert �떎�뙣");
       }
       return res;
    }
@@ -59,3 +59,4 @@ public class RegistDaoImpl implements RegistDao {
    }
 
 }
+

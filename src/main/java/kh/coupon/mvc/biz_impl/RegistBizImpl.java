@@ -11,7 +11,7 @@ import kh.coupon.mvc.dto.RegistDto;
 
 @Service
 public class RegistBizImpl implements RegistBiz {
-   
+
    @Autowired
    private RegistDao regist_dao;
 
@@ -36,3 +36,4 @@ public class RegistBizImpl implements RegistBiz {
    }
 
 }
+

@@ -5,7 +5,7 @@ import java.util.List;
 import kh.coupon.mvc.dto.RegistDto;
 
 public interface RegistDao {
-   
+
    String namespace ="member.";
 
    public List<RegistDto> regist_list();

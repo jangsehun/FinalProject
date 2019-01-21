@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kh.coupon.mvc.biz.ComplainBiz;
 import kh.coupon.mvc.dao.ComplainDao;
 import kh.coupon.mvc.dto.ComplainDto;
+import kh.coupon.mvc.dto.ReviewDto;
 
 @Service
 public class ComplainBizImpl implements ComplainBiz {
@@ -44,5 +45,20 @@ public class ComplainBizImpl implements ComplainBiz {
    public int updateHit(int complain_no) {
       return complain_dao.updateHit(complain_no);
    }
+
+	@Override
+	public List<ComplainDto> complain_list_seven() {
+		return complain_dao.complain_list_seven();
+	}
+
+	@Override
+	public List<ComplainDto> complain_list_bear() {
+		return complain_dao.complain_list_bear();
+	}
+
+	@Override
+	public List<ComplainDto> complain_list_magic() {
+		return complain_dao.complain_list_magic();
+	}
 
 }

@@ -49,4 +49,7 @@ public class RegistDto {
       this.member_password = member_password;
    }
    
+
+	
 }
+

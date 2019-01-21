@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import kh.coupon.mvc.dao.ComplainDao;
 /*import kh.coupon.mvc.dto.RegistDto;*/
 import kh.coupon.mvc.dto.ComplainDto;
+import kh.coupon.mvc.dto.ReviewDto;
 
 @Repository
 public class ComplainDaoImpl implements ComplainDao {
@@ -83,5 +84,42 @@ public class ComplainDaoImpl implements ComplainDao {
 	      }
 	      return res;
 	   }
+
+		
+		@Override
+		public List<ComplainDto> complain_list_seven() {
+			List<ComplainDto> res = null;
+			try {
+				res = sqlSessionTemplate.selectList(namespace+"complain_list_seven");
+			} catch(Exception e) {
+				System.out.println("daoImpl complain_list_seven 에러");
+				e.printStackTrace();
+			}
+			return res;
+		}
+
+		@Override
+		public List<ComplainDto> complain_list_bear() {
+			List<ComplainDto> res = null;
+			try {
+				res = sqlSessionTemplate.selectList(namespace+"complain_list_bear");
+			} catch(Exception e) {
+				System.out.println("daoImpl complain_list_bear 에러");
+				e.printStackTrace();
+			}
+			return res;
+		}
+
+		@Override
+		public List<ComplainDto> complain_list_magic() {
+			List<ComplainDto> res = null;
+			try {
+				res = sqlSessionTemplate.selectList(namespace+"complain_list_magic");
+			} catch(Exception e) {
+				System.out.println("daoImpl complain_list_magic 에러");
+				e.printStackTrace();
+			}
+			return res;
+		}
 
 }

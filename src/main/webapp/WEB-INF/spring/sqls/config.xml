@@ -2,9 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	<!-- 각 Dto들을 잡아주면된다. -->
+
 	<typeAliases>
 		<typeAlias type="kh.coupon.mvc.dto.RegistDto" alias="RegistDto"/>
 		<typeAlias type="kh.coupon.mvc.dto.ComplainDto" alias="ComplainDto"/>
+		<typeAlias type="kh.coupon.mvc.dto.ReviewDto" alias="ReviewDto"/>
 	</typeAliases>
 	
 	<mappers>
@@ -14,5 +16,6 @@
 		<mapper resource="/sqls/client_mapper.xml"/>
 		<mapper resource="/sqls/member_mapper.xml"/>
 		<mapper resource="/sqls/complain_mapper.xml"/>
+		<mapper resource="/sqls/review_mapper.xml"/>
 	</mappers>
 </configuration>

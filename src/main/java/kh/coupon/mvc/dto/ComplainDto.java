@@ -14,6 +14,7 @@ public class ComplainDto {
 	private int complain_count;
 	private int complain_like;
 
+
 	public ComplainDto() {
 	}
 
