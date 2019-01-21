@@ -101,7 +101,7 @@ CREATE TABLE client_request (
 );
 
 CREATE TABLE client_like (
-	client_like_no	NUMBER	NOT NULL PRIMARY KEY,							
+	client_like_no	NUMBER	NOT NULL PRIMARY KEY,
 	client_no	NUMBER	NOT NULL,								
 	user_no	NUMBER	NOT NULL,									
 	client_like_count	NUMBER	NULL,							 
