@@ -64,7 +64,7 @@ CREATE TABLE coupon (
 	coupon_price	NUMBER	NOT NULL,							
 	coupon_image	VARCHAR2(500)	NULL,						
 	coupon_detail	VARCHAR2(500)	NULL,						
-	coupon_category	VARCHAR2(500)	NOT NULL,					
+	coupon_category	VARCHAR2(500)	NOT NULL,		
 	coupon_date_create	DATE	NOT NULL,						 
 	coupon_kh_count	NUMBER	NULL,								
 	coupon_kh_date_buy	NUMBER	NULL,							
