@@ -27,7 +27,7 @@
 */
 
 CREATE TABLE member(
-	member_no	NUMBER	NOT NULL PRIMARY KEY,									
+	member_no	NUMBER	NOT NULL PRIMARY KEY,				
 	member_name	VARCHAR2(500)	NOT NULL,						
 	member_id	VARCHAR2(500)	NOT NULL,							
 	member_password	VARCHAR2(500)	NOT NULL,					
