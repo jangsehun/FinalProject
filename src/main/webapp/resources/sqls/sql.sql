@@ -1,27 +1,27 @@
 /*
-===================== �븘�룆 =========================
+===================== 필독 =========================
 
-1. SEQUENCE �씠由� 
-	�뀒�씠釉� �씠由� 留덉�留됱뿉 '_seq'
+1. SEQUENCE 이름 
+	테이블 이름 마지막에 '_seq'
 
-	�삁�떆 ) CREATE SEQUENCE user_seq;
+	예시 ) CREATE SEQUENCE user_seq;
 
-2. user �뀒�씠釉붿쓽 user_role 而щ읆 湲곕낯媛�
-	�궗�슜�옄 			ROLE_USER
-	�젣�쑕�뾽泥�			ROLE_CLIENT
-	�븰�썝
-		�솉蹂댄�		ROLE_MARKETING
-		�쉶怨꾪�		ROLE_ACCOUNT
-		�슫�쁺��		ROLE_OPERATION
+2. user 테이블의 user_role 컬럼 기본값
+	사용자 			ROLE_USER
+	제휴업체			ROLE_CLIENT
+	학원
+		홍보팀		ROLE_MARKETING
+		회계팀		ROLE_ACCOUNT
+		운영팀		ROLE_OPERATION
 
-3. �젣�빟議곌굔 ERD 李몄“�빐�꽌 異붽�
-	留곹겕 : https://www.erdcloud.com/d/HnGb4TFv5b4sBdf2s		
+3. 제약조건 ERD 참조해서 추가
+	링크 : https://www.erdcloud.com/d/HnGb4TFv5b4sBdf2s		
 
-4. ��臾몄옄濡� �벐吏�留먭린
+4. 대문자로 쓰지말기
 
-5. 媛� �븘�슂�븳 �뀒�씠釉붾쭔 �깮�꽦�빐�꽌 湲곕뒫 媛쒕컻
+5. 각 필요한 테이블만 생성해서 기능 개발
 
-6. 湲곕뒫 援ы쁽以� DB �닔�젙�씠 �릺�뼱�빞�븳�떎硫� �씪�떒 �닔�젙 �썑 �븣�젮二쇨린!!! (ERD CLOUD�뿉 諛섏쁺�븯湲�)
+6. 기능 구현중 DB 수정이 되어야한다면 일단 수정 후 알려주기!!! (ERD CLOUD에 반영하기)
 	https://www.erdcloud.com/d/HnGb4TFv5b4sBdf2s
 ====================================================
 */
@@ -159,6 +159,11 @@ CREATE TABLE student (
 );
 
 
+
+
+
+
+/*테스트멤버*/
 DROP TABLE MEMBER;
 DROP SEQUENCE member_seq;
 
@@ -173,48 +178,46 @@ CREATE TABLE member(
 INSERT INTO member VALUES(member_seq.NEXTVAL,'성원실','A','123');
 SELECT * FROM member;
 
+
+
+
+/*건의사항게시판*/
 DROP SEQUENCE complain_board_seq;
 DROP TABLE complain_board;
-
-
-
-
 CREATE SEQUENCE complain_board_seq;
 CREATE TABLE complain_board (
-	complain_no	NUMBER	NOT NULL PRIMARY KEY,	
-	complain_writer	VARCHAR2(500)	NOT NULL,	
-	complain_title	VARCHAR2(500)	NOT NULL,				
-	complain_content	VARCHAR2(3000)	NOT NULL,					
-	complain_date_create	DATE	NOT NULL,			
-	complain_date_update	DATE	NULL,
-	complain_category	VARCHAR2(500)	NOT NULL,			
-	complain_count	NUMBER	NULL,
+	complain_no NUMBER NOT NULL,
+	complain_category VARCHAR2(100) NOT NULL,
+	complain_title VARCHAR2(100) NOT NULL,
+	complain_content VARCHAR2(1024) NOT NULL,
+	complain_writer VARCHAR2(10) NOT NULL,
+	complain_date_create DATE NOT NULL,
+	complain_date_update DATE NULL,
+	complain_count NUMBER NULL,
 	complain_like NUMBER NULL
 );
 
-
-INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'작성자이름','건의사항 글제목','건의사항 글내용',SYSDATE,SYSDATE,'맥주창고',0,0);
-
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'맥주창고','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
 SELECT * FROM complain_board;
 
 
 
-
-
-
+/*리뷰게시판*/
+DROP TABLE review_board;
+DROP SEQUENCE review_board_seq;
 CREATE SEQUENCE review_board_seq;
 CREATE TABLE review_board (
-	review_no	NUMBER	NOT NULL PRIMARY KEY,	
-	review_writer	VARCHAR2(500)	NOT NULL,	
-	review_title	VARCHAR2(500)	NOT NULL,				
-	review_content	VARCHAR2(3000)	NOT NULL,					
-	review_date_create	DATE	NOT NULL,			
-	review_date_update	DATE	NULL,
-	review_category	VARCHAR2(500)	NOT NULL,			
-	review_count	NUMBER	NULL,
+	review_no NUMBER NOT NULL,
+	review_category VARCHAR2(100) NOT NULL,
+	review_title VARCHAR2(100) NOT NULL,
+	review_content VARCHAR2(1024) NOT NULL,
+	review_writer VARCHAR2(10) NOT NULL,
+	review_date_create DATE NOT NULL,
+	review_date_update DATE NULL,
+	review_count NUMBER NULL,
 	review_like NUMBER NULL
 );
 
-INSERT INTO review_board VALUES(review_board_seq.NEXTVAL,'작성자이름','이용후기 글제목','이용후기 글내용',SYSDATE,SYSDATE,'맥주창고',0,0);
-
+INSERT INTO review_board VALUES(review_board_seq.NEXTVAL,'맥주창고','이용후기게시판 제목','이용후기게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
 SELECT * FROM review_board;
+

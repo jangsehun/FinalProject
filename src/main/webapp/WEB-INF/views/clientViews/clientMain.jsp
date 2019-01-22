@@ -143,9 +143,9 @@ nav .fa.fa-angle-down {
 					<ul>
 						<li><a href="#">제휴업체<i class='fa fa-angle-down'></i></a>
 							<ul>
-								<li><a href="#">맥주창고</a></li>
-								<li><a href="#">7GRAM</a></li>
-								<li><a href="#">요술포차</a></li>
+								<li><a href="client_beerMain">맥주창고</a></li>
+ 								<li><a href="client_sevenMain">7GRAM</a></li>
+								<li><a href="client_magicMain">요술포차</a></li>
 							</ul>
 						</li>
 					
@@ -153,24 +153,23 @@ nav .fa.fa-angle-down {
 							<ul>
 								<li><a href="#">공지사항</a></li>
 								<li><a href="complain_board_list">건의사항</a></li>
-								<li><a href="#">이용후기</a></li>
+								<li><a href="review_board_list">이용후기</a></li>
 							</ul>
 						</li>
 					
-						<li class='sub-menu'><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
+						<li class='sub-menu'><a href="myPage">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
-								<li><a href="#">내 업체 정보</a></li>
-								<li><a href="#">매출현황</a></li>
-								<li><a href="#">메뉴수정</a></li>
+								<li><a href="myPage">내 업체 정보</a></li>
+								<li><a href="my_salesPage">매출현황</a></li>
+								<li><a href="#">메뉴관리</a></li>
+								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
 
 					</ul>
 				</div>
 			</div>
-
-		<h4 class="text-uppercase mb-1">${regist_dto.member_name } 님  환영합니다.></h4>
-
+			<h3 class="text-uppercase mb-1">${regist_dto.member_name } 님  환영합니다.</h3>
 	</nav>
 
 
@@ -241,9 +240,6 @@ nav .fa.fa-angle-down {
 				<div class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
 					<button class="btn btn-primary btn-xl">제휴업체 문의하기</button>
 				</div>
-
-
-
 			</div>
 		</div>
 	</footer>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setContentType("text/html; charset=UTF-8"); %>
 <!DOCTYPE html>
@@ -17,41 +17,41 @@ $(document).ready(function(){
 });
 
 </script>
-<meta charset="UTF-8">
-<title>ê±´ì˜ì‚¬í•­ ì‘ì„± í˜ì´ì§€</title>
+<meta charset="EUC-KR">
+<title>°ÇÀÇ»çÇ× ÀÛ¼º ÆäÀÌÁö</title>
 </head>
 <body>
-	${regist_dto.member_name }ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.
-	<h1>í›„ê¸° ì‘ì„± í˜ì´ì§€</h1>
+	${regist_dto.member_name }´Ô È¯¿µÇÕ´Ï´Ù.
+	<h1>°ÇÀÇ»çÇ× ÀÛ¼º ÆäÀÌÁö</h1>
 	<form action="complain_insert" method="post">
 	<table border="1">
 		<tr>
-			<th>ì‘ì„±ì</th>
+			<th>ÀÛ¼ºÀÚ</th>
 			<td><input type="text" value="${regist_dto.member_name }" name="complain_writer" readonly="readonly"/></td>
 		</tr>
 		<tr>
-			<th>êµ¬ë¶„</th>
+			<th>±¸ºĞ</th>
 			<td>
 				<select id="condition">
-					<option value="ì „ì²´" <c:if test="${Name eq 'ì „ì²´'}">selected</c:if>>ì „ì²´</option>
+					<option value="ÀüÃ¼" <c:if test="${Name eq 'ÀüÃ¼'}">selected</c:if>>ÀüÃ¼</option>
 					<option value="7Gram" <c:if test="${param.condition=='7Gram'}">selected</c:if>>7Gram</option>
-					<option value="ë§¥ì£¼ì°½ê³ " <c:if test="${param.condition=='ë§¥ì£¼ì°½ê³ '}">selected</c:if>>ë§¥ì£¼ì°½ê³ </option>
-					<option value="ìš”ìˆ í¬ì°¨" <c:if test="${param.condition=='ìš”ìˆ í¬ì°¨'}">selected</c:if>>ìš”ìˆ í¬ì°¨</option>
+					<option value="¸ÆÁÖÃ¢°í" <c:if test="${param.condition=='¸ÆÁÖÃ¢°í'}">selected</c:if>>¸ÆÁÖÃ¢°í</option>
+					<option value="¿ä¼úÆ÷Â÷" <c:if test="${param.condition=='¿ä¼úÆ÷Â÷'}">selected</c:if>>¿ä¼úÆ÷Â÷</option>
 				</select>
 			</td>
 		</tr>
 		<tr>
-			<th>ì œëª©</th>
+			<th>Á¦¸ñ</th>
 			<td><input type="text" name="complain_title"/></td>
 		</tr>
 		<tr>
-			<th>ë‚´ìš©</th>
+			<th>³»¿ë</th>
 			<td><textarea rows="10" cols="60" name="complain_content"></textarea></td>
 		</tr>
 	</table>
 	<hr>
-	<input type="button" value="ì·¨ì†Œ" onclick="location.href='complain_insertform'"/>
-	<input type="submit" value="í›„ê¸°ë“±ë¡"/>
+	<input type="button" value="Ãë¼Ò" onclick="location.href='complain_insertform'"/>
+	<input type="submit" value="ÈÄ±âµî·Ï"/>
 	</form>
 </body>
 </html>

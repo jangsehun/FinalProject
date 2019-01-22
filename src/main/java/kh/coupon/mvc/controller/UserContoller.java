@@ -101,7 +101,7 @@ public class UserContoller {
 		return "userViews/reviewBoardInsert";
 	}
 	
-	@RequestMapping(value="review_insert", method=RequestMethod.POST)
+	@RequestMapping(value="review_insert", method = {RequestMethod.GET, RequestMethod.POST})
 	public String review_insert(Model model,ReviewDto review_dto,HttpServletRequest request) {
 		String condition = request.getParameter("condition");
 		System.out.println("후기 작성시 selected 값 : "+condition);

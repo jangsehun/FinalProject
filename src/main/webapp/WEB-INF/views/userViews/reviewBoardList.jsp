@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <% response.setContentType("text/html; charset=UTF-8"); %>
 <!DOCTYPE html>
@@ -54,7 +55,7 @@ ${regist_dto.member_name }님 환영합니다.<br>
 							<td>${dto.review_no }</td>
 							<td>${dto.review_category }</td>
 							<td><a href="review_detail?review_no=${dto.review_no }">${dto.review_title }</a></td>
-							<td>${dto.review_date_create }</td>
+							<td><fmt:formatDate value="${dto.review_date_create }" pattern="yyyy.MM.dd" /></td>			
 							<td>${dto.review_count }</td>
 							<td>${dto.review_like }</td>
 						</tr>

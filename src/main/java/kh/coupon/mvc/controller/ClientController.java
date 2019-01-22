@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kh.coupon.mvc.biz.RegistBiz;
+import kh.coupon.mvc.biz.ReviewBiz;
 import kh.coupon.mvc.biz.ComplainBiz;
 import kh.coupon.mvc.dto.ComplainDto;
 import kh.coupon.mvc.dto.RegistDto;
+import kh.coupon.mvc.dto.ReviewDto;
 
 @Controller
 @RequestMapping("client")
@@ -22,12 +24,45 @@ public class ClientController {
 	private RegistBiz regist_biz;
 	@Autowired
 	private ComplainBiz complain_biz;
-
+	@Autowired
+	private ReviewBiz review_biz;
 	
+
 	@RequestMapping("clientMain")
-	public String test() {
+	public String clientMain() {
 		return "clientViews/clientMain";
 	}
+	
+	@RequestMapping("client_beerMain")
+	public String clisnt_beerMain() {
+		return "clientViews/client_beerMain";
+	}
+	
+	@RequestMapping("client_magicMain")
+	public String client_magicMain() {
+		return "clientViews/client_magicMain";
+	}
+	
+	@RequestMapping("client_sevenMain")
+	public String client_sevenMain() {
+		return "clientViews/client_sevenMain";
+	}
+	
+	@RequestMapping("myPage")
+	public String mypage() {
+		return "clientViews/myPage";
+	}
+	
+	@RequestMapping("my_salesPage")
+	public String my_salesPage() {
+		return "clientViews/my_salesPage";
+	}
+	
+	@RequestMapping("my_mapPage")
+	public String my_mapPage() {
+		return "clientViews/my_mapPage";
+	}
+	
 
 	@RequestMapping(value = "registform")
 	public String registform() {
@@ -56,82 +91,157 @@ public class ClientController {
 		}
 	}
 
-	@RequestMapping(value ="complain_board_list")
+	
+	
+	
+	
+	@RequestMapping(value = "complain_board_list")
 	public String complain_board_list(Model model) {
 		model.addAttribute("list", complain_biz.complain_list());
 		return "clientViews/complainBoardList";
 	}
-	
-	   
-	   @RequestMapping("complain_detail")
-	   public String complain_detail(Model model,int complain_no) {
-		   complain_biz.updateHit(complain_no);
-	      model.addAttribute("dto",complain_biz.complain_detail(complain_no));
-	      return "clientViews/complainBoardDetail";
-	   }
-	   
-	   
-		// 후기게시판에서 제휴업체 구분 검색
-		@RequestMapping("complain_search")
-		public String complain_search(Model model,HttpServletRequest request) {
-			String condition = request.getParameter("condition");
-			System.out.println("제휴업체구분 : " +condition);
-			if(condition.equals("7Gram")) {
-				model.addAttribute("list", complain_biz.complain_list_seven());			
-			} else if(condition.equals("맥주창고")) {
-				model.addAttribute("list", complain_biz.complain_list_bear());
-			} else if(condition.equals("요술포차")) {
-				model.addAttribute("list", complain_biz.complain_list_magic());
-			} else if(condition.equals("전체")){
-				model.addAttribute("list", complain_biz.complain_list());
-			}
+
+	// 건의사항 게시판에서 제휴업체 구분 검색
+	@RequestMapping("complain_search")
+	public String complain_search(Model model, HttpServletRequest request) {
+		String condition = request.getParameter("condition");
+		System.out.println("제휴업체구분 : " + condition);
+		if (condition.equals("7Gram")) {
+			model.addAttribute("list", complain_biz.complain_list_seven());
+		} else if (condition.equals("맥주창고")) {
+			model.addAttribute("list", complain_biz.complain_list_bear());
+		} else if (condition.equals("요술포차")) {
+			model.addAttribute("list", complain_biz.complain_list_magic());
+		} else if (condition.equals("전체")) {
+			model.addAttribute("list", complain_biz.complain_list());
+		}
+		return "clientViews/complainBoardList";
+	}
+
+	@RequestMapping("complain_detail")
+	public String complain_detail(Model model, int complain_no) {
+		complain_biz.updateHit(complain_no);
+		model.addAttribute("dto", complain_biz.complain_detail(complain_no));
+		return "clientViews/complainBoardDetail";
+	}
+
+	@RequestMapping(value = "complain_insertform")
+	public String complain_insertform() {
+		return "clientViews/complainBoardInsert";
+	}
+
+	@RequestMapping(value = "complain_insert", method = { RequestMethod.GET, RequestMethod.POST })
+	public String complain_insert(Model model, ComplainDto complain_dto, HttpServletRequest request) {
+		String condition = request.getParameter("condition");
+		System.out.println("건의사항 작성시 selected 값 : " + condition);
+		int res = complain_biz.complain_insert(complain_dto);
+		if (res > 0) {
+			model.addAttribute("list", complain_biz.complain_list());
 			return "clientViews/complainBoardList";
+		} else {
+			return "clientViews/complainBoardInsert";
 		}
-	   
-	   @RequestMapping(value="complain_insertform")
-	   public String complain_insertform() {
-	      return "clientViews/complainBoardInsert";
-	   }
-	   
-		
-	   @RequestMapping(value="complain_insert", method=RequestMethod.POST)
-		public String complain_insert(Model model,ComplainDto complain_dto,HttpServletRequest request) {
-			String condition = request.getParameter("condition");
-			System.out.println("건의사항 작성시 selected 값 : "+condition);
-			int res = complain_biz.complain_insert(complain_dto);
-			if(res>0) {
-				model.addAttribute("list",complain_biz.complain_list());
-				return "clientViews/complainBoardList";
-			} else {
-				return "clientViews/complainBoardInsert";
-			}
+	}
+
+	@RequestMapping("complain_updateform")
+	public String complain_updateform(Model model, int complain_no) {
+		model.addAttribute("dto", complain_biz.complain_detail(complain_no));
+		System.out.println(complain_no);
+		return "clientViews/complainBoardUpdate";
+	}
+
+	@RequestMapping(value = "complain_update", method = RequestMethod.POST)
+	public String complain_update(Model model, ComplainDto complain_dto, int complain_no) {
+		int res = complain_biz.complain_update(complain_dto);
+		if (res > 0) {
+			model.addAttribute("dto", complain_biz.complain_detail(complain_no));
+			return "clientViews/complainBoardDetail";
+		} else {
+			return "clientViews/complainBoardUpdate";
 		}
-	   
-	   @RequestMapping("complain_updateform")
-	   public String complain_updateform(Model model,int complain_no) {
-	      model.addAttribute("dto",complain_biz.complain_detail(complain_no));
-	      System.out.println(complain_no);
-	      return "clientViews/complainBoardUpdate";
-	   }
-	   
-	   @RequestMapping(value="complain_update", method=RequestMethod.POST)
-	   public String complain_update(Model model,ComplainDto complain_dto,int complain_no) {
-	      int res = complain_biz.complain_update(complain_dto);
-	      if(res>0) {
-	         model.addAttribute("dto",complain_biz.complain_detail(complain_no));
-	         return "clientViews/complainBoardDetail";
-	      } else {
-	         return "clientViews/complainBoardUpdate";
-	      }
-	   }
-	   
-	   @RequestMapping("complain_delete")
-	   public String complain_delete(Model model,int complain_no) {
-		   complain_biz.complain_delete(complain_no);
-	      model.addAttribute("list",complain_biz.complain_list());
-	      return "clientViews/complainBoardList";
-	   }
+	}
 
-
+	@RequestMapping("complain_delete")
+	public String complain_delete(Model model, int complain_no) {
+		complain_biz.complain_delete(complain_no);
+		model.addAttribute("list", complain_biz.complain_list());
+		return "clientViews/complainBoardList";
+	}
+	
+	
+	
+	
+	@RequestMapping("review_board_list")
+	public String review_board_list(Model model) {
+		model.addAttribute("list",review_biz.review_list());
+		return "userViews/reviewBoardList";
+	} 
+	
+	// 후기게시판에서 제휴업체 구분 검색
+	@RequestMapping("review_search")
+	public String review_search(Model model,HttpServletRequest request) {
+		String condition = request.getParameter("condition");
+		System.out.println("제휴업체구분 : " +condition);
+		if(condition.equals("7Gram")) {
+			model.addAttribute("list", review_biz.review_list_seven());			
+		} else if(condition.equals("맥주창고")) {
+			model.addAttribute("list", review_biz.review_list_bear());
+		} else if(condition.equals("요술포차")) {
+			model.addAttribute("list", review_biz.review_list_magic());
+		} else if(condition.equals("전체")){
+			model.addAttribute("list", review_biz.review_list());
+		}
+		return "userViews/reviewBoardList";
+	}
+	
+	@RequestMapping("review_detail")
+	public String review_detail(Model model,int review_no) {
+		review_biz.updateHit(review_no);
+		model.addAttribute("dto",review_biz.review_detail(review_no));
+		return "userViews/reviewBoardDetail";
+	}
+	
+	@RequestMapping(value="review_insertform")
+	public String review_insertform() {
+		return "userViews/reviewBoardInsert";
+	}
+	
+	@RequestMapping(value="review_insert", method = {RequestMethod.GET, RequestMethod.POST})
+	public String review_insert(Model model,ReviewDto review_dto,HttpServletRequest request) {
+		String condition = request.getParameter("condition");
+		System.out.println("후기 작성시 selected 값 : "+condition);
+		int res = review_biz.review_insert(review_dto);
+		if(res>0) {
+			model.addAttribute("list",review_biz.review_list());
+			return "userViews/reviewBoardList";
+		} else {
+			return "userViews/reviewBoardInsert";
+		}
+	}
+	
+	@RequestMapping("review_updateform")
+	public String review_updateform(Model model,int review_no) {
+		model.addAttribute("dto",review_biz.review_detail(review_no));
+		System.out.println(review_no);
+		return "userViews/reviewBoardUpdate";
+	}
+	
+	@RequestMapping(value="review_update", method=RequestMethod.POST)
+	public String review_update(Model model,ReviewDto review_dto,int review_no) {
+		int res = review_biz.review_update(review_dto);
+		if(res>0) {
+			model.addAttribute("dto",review_biz.review_detail(review_no));
+			return "userViews/reviewBoardDetail";
+		} else {
+			return "userViews/reviewBoardUpdate";
+		}
+	}
+	
+	@RequestMapping("review_delete")
+	public String review_delete(Model model,int review_no) {
+		review_biz.review_delete(review_no);
+		model.addAttribute("list",review_biz.review_list());
+		return "userViews/reviewBoardList";
+	}
 
 }

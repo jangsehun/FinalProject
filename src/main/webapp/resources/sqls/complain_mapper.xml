@@ -6,6 +6,18 @@
       SELECT * FROM complain_board ORDER BY complain_no DESC
    </select>
    
+   	<select id="complain_list_seven" resultType="ComplainDto">
+		SELECT complain_no,complain_category,complain_title,complain_date_create,complain_count,complain_like FROM complain_board WHERE complain_category='7Gram' ORDER BY complain_no DESC
+	</select>
+	
+	<select id="complain_list_bear" resultType="ComplainDto">
+		SELECT complain_no,complain_category,complain_title,complain_date_create,complain_count,complain_like FROM complain_board WHERE complain_category='맥주창고' ORDER BY complain_no DESC
+	</select>
+	
+	<select id="complain_list_magic" resultType="ComplainDto">
+		SELECT complain_no,complain_category,complain_title,complain_date_create,complain_count,complain_like FROM complain_board WHERE complain_category='요술포차' ORDER BY complain_no DESC
+	</select>
+   
    <select id="complain_detail" resultType="ComplainDto" parameterType="int">
       SELECT complain_no,complain_writer,complain_category,complain_title,complain_content FROM complain_board WHERE complain_no=#{complain_no}
    </select>
