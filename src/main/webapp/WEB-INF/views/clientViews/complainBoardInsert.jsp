@@ -11,7 +11,7 @@ $(document).ready(function(){
 	  
     $("#condition").change(function(){      
        var condition = $("#condition option:selected").val();
-       location.href="complain_insert?condition="+condition;   
+       location.href="complain_insert?condition="+condition;
     });
     
 });
