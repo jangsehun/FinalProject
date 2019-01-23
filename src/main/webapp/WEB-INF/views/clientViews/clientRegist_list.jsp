@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>등록된 제휴업체 페이지</title>
+<title>제휴업체 조회 페이지</title>
 </head>
 <body>
 

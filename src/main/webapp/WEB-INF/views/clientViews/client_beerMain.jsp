@@ -10,10 +10,11 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>제휴업체 메인페이지</title>
+<title>맥주창고 메인페이지</title>
 
 <!-- 드롭다운 -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet"type="text/css" href="${pageContext.request.contextPath}/resources/css/dropdown.css">
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
@@ -28,108 +29,15 @@
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/freelancer.min.css">
 
-<!-- 드롭다운관련 style -->
-<style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
-
-/* main Styles */
-html {
-	box-sizing: border-box;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-body {
-	background: #fafafa;
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	margin: 0;
-}
-
-a {
-	text-decoration: none;
-}
-
-.container {
-	width: 1000px;
-	margin: auto;
-}
-
-h1 {
-	text-align: center;
-	margin-top: 150px;
-}
-
-/* Navigation Styles */
-nav {
-	background: #2ba0db;
-}
-
-nav ul {
-	font-size: 0;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li {
-	display: inline-block;
-	position: relative;
-}
-
-nav ul li a {
-	color: #fff;
-	display: block;
-	font-size: 14px;
-	padding: 15px 14px;
-	transition: 0.3s linear;
-}
-
-nav ul li:hover {
-	background: #126d9b;
-}
-
-nav ul li ul {
-	border-bottom: 5px solid #2ba0db;
-	display: none;
-	position: absolute;
-	width: 250px;
-}
-
-nav ul li ul li {
-	border-top: 1px solid #444;
-	display: block;
-}
-
-nav ul li ul li:first-child {
-	border-top: none;
-}
-
-nav ul li ul li a {
-	background: #373737;
-	display: block;
-	padding: 10px 14px;
-}
-
-nav ul li ul li a:hover {
-	background: #126d9b;
-}
-
-nav .fa.fa-angle-down {
-	margin-left: 6px;
-}
-</style>
-
 </head>
-<body id="page-top">
+<body>
 
 	<!-- Navigation -->
 	<nav
 		class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
 		id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">KHC</a>
+			<a class="navbar-brand js-scroll-trigger" href="clientMain">KHC</a>
 			<button
 				class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
 				type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -157,7 +65,7 @@ nav .fa.fa-angle-down {
 							</ul>
 						</li>
 					
-						<li class='sub-menu'><a href="myPage">마이페이지<i class='fa fa-angle-down'></i></a>
+						<li class='sub-menu'><a href="">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
 								<li><a href="myPage">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
@@ -169,7 +77,7 @@ nav .fa.fa-angle-down {
 					</ul>
 				</div>
 			</div>
-			<h3 class="text-uppercase mb-1">${regist_dto.member_name } 님  환영합니다.</h3>
+			<h6 style="color:white;">${regist_dto.member_name } 님  환영합니다.</h6>
 
 	</nav>
 
@@ -248,16 +156,9 @@ nav .fa.fa-angle-down {
 		</div>
 	</footer>
 
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div class="scroll-to-top d-lg-none position-fixed ">
-		<a class="js-scroll-trigger d-block text-center text-white rounded"
-			href="#page-top"> <i class="fa fa-chevron-up"></i>
-		</a>
-	</div>
+	<!-- 모달창들-->
 
-	<!-- Portfolio Modals -->
-
-	<!-- Portfolio Modal 1 -->
+	<!-- 로그인 모달창1 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -285,7 +186,7 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 2 -->
+	<!-- 회원가입 모달창2 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -313,7 +214,7 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 3 -->
+	<!-- 맥주창고 모달창3 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -341,7 +242,7 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 4 -->
+	<!-- 7GRAM 모달창4 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -369,7 +270,7 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 5 -->
+	<!-- 요술포차 모달창5 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -397,7 +298,7 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 6 -->
+	<!-- 제휴문의 모달창6 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -425,7 +326,6 @@ nav .fa.fa-angle-down {
 		</div>
 	</div>
 
-		
 	<!-- Bootstrap core JavaScript (네비게이션 바 연관)-->
 	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js" />"></script>

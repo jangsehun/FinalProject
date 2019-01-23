@@ -329,6 +329,7 @@ form .row:first-child .floating-label-form-group {
   padding-bottom: 5rem;
   background-color: #2C3E50;
   color: #fff;
+  float:left;
 }
 
 .copyright {
@@ -348,7 +349,7 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-  background-color: #18BC9C !important;
+  background-color: #abc2e2!important;
 }
 
 .bg-secondary {
@@ -356,7 +357,7 @@ a:focus, a:hover, a:active {
 }
 
 .text-primary {
-  color: #18BC9C !important;
+  color: #abc2e2 !important;
 }
 
 .text-secondary {
@@ -364,8 +365,8 @@ a:focus, a:hover, a:active {
 }
 
 .btn-primary {
-  background-color: #18BC9C;
-  border-color: #18BC9C;
+  background-color: #abc2e2;
+  border-color: #abc2e2;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {

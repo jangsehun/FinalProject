@@ -46,7 +46,7 @@ $(document).ready(function(){
 		</tr>
 		<tr>
 			<th>³»¿ë</th>
-			<td><textarea rows="10" cols="60" name="complain_content"></textarea></td>
+			<td><textarea rows="10" cols="60" name="complain_content"></textarea></td> 
 		</tr>
 	</table>
 	<hr>

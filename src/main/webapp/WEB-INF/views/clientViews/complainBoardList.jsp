@@ -12,15 +12,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>제휴업체 메인페이지</title>
+<title>건의사항 게시판 페이지</title>
 
 <!-- 드롭다운 -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link rel="stylesheet"type="text/css" href="${pageContext.request.contextPath}/resources/css/dropdown.css">
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
@@ -34,111 +34,14 @@
 
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/freelancer.min.css">
-
-<!-- 드롭다운관련 style -->
-<style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
-
-/* main Styles */
-html {
-	box-sizing: border-box;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-body {
-	background: #fafafa;
-	font-family: "Roboto", sans-serif;
-	font-size: 14px;
-	margin: 0;
-}
-
-a {
-	text-decoration: none;
-}
-
-.container {
-	width: 1000px;
-	margin: auto;
-}
-
-h1 {
-	text-align: center;
-	margin-top: 150px;
-}
-
-/* Navigation Styles */
-nav {
-	background: #2ba0db;
-}
-
-nav ul {
-	font-size: 0;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li {
-	display: inline-block;
-	position: relative;
-}
-
-nav ul li a {
-	color: #fff;
-	display: block;
-	font-size: 14px;
-	padding: 15px 14px;
-	transition: 0.3s linear;
-}
-
-nav ul li:hover {
-	background: #126d9b;
-}
-
-nav ul li ul {
-	border-bottom: 5px solid #2ba0db;
-	display: none;
-	position: absolute;
-	width: 250px;
-}
-
-nav ul li ul li {
-	border-top: 1px solid #444;
-	display: block;
-}
-
-nav ul li ul li:first-child {
-	border-top: none;
-}
-
-nav ul li ul li a {
-	background: #373737;
-	display: block;
-	padding: 10px 14px;
-}
-
-nav ul li ul li a:hover {
-	background: #126d9b;
-}
-
-nav .fa.fa-angle-down {
-	margin-left: 6px;
-}
-</style>
-<meta charset="UTF-8">
-<title>건의사항 게시판 페이지</title>
 </head>
 
-<body id="page-top">
+<body>
 
 	<!-- Navigation -->
-	<nav
-		class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-		id="mainNav">
+	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">KHC</a>
+			<a class="navbar-brand js-scroll-trigger" href="clientMain">KHC</a>
 			<button
 				class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
 				type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -251,8 +154,6 @@ nav .fa.fa-angle-down {
 
 	</section>
 
-
-	
 	
 	<!-- Footer -->
 	<footer class="footer text-center">
@@ -274,46 +175,68 @@ nav .fa.fa-angle-down {
 		</div>
 	</footer>
 	
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div class="scroll-to-top d-lg-none position-fixed ">
-		<a class="js-scroll-trigger d-block text-center text-white rounded"
-			href="#page-top"> <i class="fa fa-chevron-up"></i>
-		</a>
+	<!-- 제휴문의 모달창6 -->
+	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
+		<div class="portfolio-modal-dialog bg-white">
+			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
+				href="#"> <i class="fa fa-3x fa-times"></i>
+			</a>
+			<div class="container text-center">
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
+						<hr class="star-dark mb-5">
+						<img class="img-fluid mb-5"
+							src="${pageContext.request.contextPath}/resources/img/portfolio/submarine.png"
+							alt="">
+						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
+							magnam, recusandae quos quis inventore quisquam velit asperiores,
+							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+						<a
+							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
+							href="#"> <i class="fa fa-close"></i> Close
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
-<!-- Bootstrap core JavaScript (네비게이션 바 연관)-->
-<script src="<c:url value="/resources/vendor/jquery/jquery.min.js" />"></script>
-<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js" />"></script>
+	<!-- Bootstrap core JavaScript (네비게이션 바 연관)-->
+	<script src="<c:url value="/resources/vendor/jquery/jquery.min.js" />"></script>
+	<script src="<c:url value="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js" />"></script>
 
-<!-- Plugin JavaScript -->
-<script src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js" />"></script>
-<script src="<c:url value="/resources/vendor/magnific-popup/jquery.magnific-popup.min.js" />"></script>
-<!-- Custom scripts for this template -->
-<script src="<c:url value="/resources/js/freelancer.min.js" />"></script>
+	<!-- Plugin JavaScript -->
+	<script src="<c:url value="/resources/vendor/jquery-easing/jquery.easing.min.js" />"></script>
+	<script src="<c:url value="/resources/vendor/magnific-popup/jquery.magnific-popup.min.js" />"></script>
+	
+	<!-- Custom scripts for this template -->
+	<script src="<c:url value="/resources/js/freelancer.min.js" />"></script>
 
-<!-- 드롭다운 -->
-<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>
-	$('nav li').hover(function() {
-		$('ul', this).stop().slideDown(200);
-	}, function() {
-		$('ul', this).stop().slideUp(200);
-	});
-</script>
-
-<!-- 카테고리선택관련 -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		$("#condition").change(function() {
-			var condition = $("#condition option:selected").val();
-			location.href = "complain_search?condition=" + condition;
+	<!-- 드롭다운 -->
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$('nav li').hover(function() {
+			$('ul', this).stop().slideDown(200);
+		}, function() {
+			$('ul', this).stop().slideUp(200);
 		});
+	</script>
 
-	});
-</script>
+	<!-- 카테고리선택관련 -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("#condition").change(function() {
+				var condition = $("#condition option:selected").val();
+				location.href = "complain_search?condition=" + condition;
+			});
+
+		});
+	</script>
 	
 </body>
 
