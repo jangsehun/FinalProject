@@ -35,7 +35,7 @@
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/freelancer.min.css">
 
-<!-- 게시판 style -->
+<!-- 게시판 style --> 
 <style>
 
 /* boardcss_list 에서 사용하는 글 목록 테이블 크기*/
