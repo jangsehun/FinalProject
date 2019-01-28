@@ -104,26 +104,6 @@
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
 	
-	<!-- Footer -->
- 	<footer class="footer text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 mb-5 mb-lg-0">
-					<h4 class="text-uppercase mb-4">KH정보교육원</h4>
-					<h4 class="text-uppercase mb-2">@(주)세훈팩토리</h4>
-				</div>
-				<div class="col-md-4 mb-5 mb-lg-0">
-					<h4 class="text-uppercase mb-4">제휴업체 문의</h4>
-					<h4 class="text-uppercase mb-4">전화: 010-1234-1234</h4>
-					<h4 class="text-uppercase mb-4">주소: 서울특별시 테헤란로 1000-1</h4>
-				</div>
-				<div class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
-					<button class="btn btn-primary btn-xl">제휴업체 문의하기</button>
-				</div>
-			</div>
-		</div>
-	</footer>
-	
 	<header class="masthead bg-primary text-white text-center">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0">내 업체 정보</h2>
@@ -178,6 +158,26 @@
 			
 		</div>
 	</header>
+	
+	<!-- Footer -->
+ 	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">KH정보교육원</h4>
+					<h4 class="text-uppercase mb-2">@(주)세훈팩토리</h4>
+				</div>
+				<div class="col-md-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">제휴업체 문의</h4>
+					<h4 class="text-uppercase mb-4">전화: 010-1234-1234</h4>
+					<h4 class="text-uppercase mb-4">주소: 서울특별시 테헤란로 1000-1</h4>
+				</div>
+				<div class="portfolio-item d-block mx-auto" href="#portfolio-modal-6">
+					<button class="btn btn-primary btn-xl">제휴업체 문의하기</button>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<!-- 제휴문의 모달창6-->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">

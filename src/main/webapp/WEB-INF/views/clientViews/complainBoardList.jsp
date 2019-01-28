@@ -34,7 +34,29 @@
 
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/freelancer.min.css">
+
+<!-- 게시판 style -->
+<style>
+
+/* boardcss_list 에서 사용하는 글 목록 테이블 크기*/
+.boardcss_list_table { width: 100%; }
+
+/* 화면에 보여지는 글 목록 테이블 */
+.list_table { width: 100%; }
+
+/* 화면에 보여지는 caption */
+.list_table caption { display: none; }
+
+/* list_table 에서 사용되는 thead */
+.list_table thead th { text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; background: #faf9fa; }
+
+/* list_table 에서 사용되는 tbody */
+.list_table tbody td { text-align: center;  border-bottom: 1px solid #e5e5e5; padding: 5px 0; }
+
+</style>
+
 </head>
+
 
 <body>
 
@@ -96,15 +118,12 @@
 	
 	<section class="portfolio" id="portfolio">
 	<div class="container">
-	<div class="boardcss_list_table">
+	<form class="boardcss_list_table" action="complain_insertform">
 		<select id="condition">
 			<option value="전체" <c:if test="${Name eq '전체'}">selected</c:if>>전체</option>
-			<option value="7Gram"
-				<c:if test="${param.condition=='7Gram'}">selected</c:if>>7Gram</option>
-			<option value="맥주창고"
-				<c:if test="${param.condition=='맥주창고'}">selected</c:if>>맥주창고</option>
-			<option value="요술포차"
-				<c:if test="${param.condition=='요술포차'}">selected</c:if>>요술포차</option>
+			<option value="7Gram"<c:if test="${param.condition=='7Gram'}">selected</c:if>>7Gram</option>
+			<option value="맥주창고"<c:if test="${param.condition=='맥주창고'}">selected</c:if>>맥주창고</option>
+			<option value="요술포차"<c:if test="${param.condition=='요술포차'}">selected</c:if>>요술포차</option>
 		</select>
 		<table class="list_table">
 		<colgroup>
@@ -146,11 +165,10 @@
 			</c:choose>
 		</table>
 	<hr>
-	<input type="button" value="제휴업체 메인페이지로" onclick="location.href='clientMain'" />
-	<input type="submit" value="건의사항작성" />
-		
+	<input type="submit" value="건의사항작성" class="btn btn-primary" id="b1" style="float: right;"/>
+	</form>
 	</div>
-	</div>
+
 
 	</section>
 
