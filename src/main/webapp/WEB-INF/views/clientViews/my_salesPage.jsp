@@ -58,11 +58,11 @@
 							</ul>
 						</li>
 
-						<li class='sub-menu'><a href="">마이페이지<i class='fa fa-angle-down'></i></a>
+						<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
 								<li><a href="myPage">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="#">메뉴관리</a></li>
+								<li><a href="my_menuPage">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -75,13 +75,9 @@
 	</nav>
 
 	<!-- 왼쪽 메뉴바 -->
-	<aside class="sidebar">
+	<aside class="sidebar" style="margin-top :91px;">
+	<br>
 		<div id="leftside-navigation" class="nano">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 			<ul class="nano-content">
 				<li class="sub-menu">
 					<a href="myPage">
@@ -92,7 +88,7 @@
 					<i class="fa fa-bar-chart-o"></i><span>매출현황</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
-					<a href="#">
+					<a href="my_menuPage">
 					<i class="fa fa fa-tasks"></i><span>메뉴 관리</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
@@ -103,62 +99,27 @@
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
-	
-	
-	<header class="masthead bg-primary text-white text-center">
-		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">매출현황</h2>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="row justify-content-center">
+			<div>
+				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/매출현황.png" alt="">
+				<h2 class="text-center text-uppercase text-secondary mb-0">매출현황</h2>
+			</div>
 		</div>
-	</header>
-
+		
+		<br>
+		
+		<div class="row justify-content-center" style="margin-bottom: 1000px;">	
+		
+		여기다가 매출현황값 넣으면됌
+		
+		</div>
 	
 	<!-- Footer -->
 	<footer class="footer text-center">
@@ -180,7 +141,7 @@
 		</div>
 	</footer>
 	
-	<!-- 제휴문의 모달창6-->
+	<!-- 제휴문의 모달창6 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
 		<div class="portfolio-modal-dialog bg-white">
 			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
@@ -191,17 +152,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/submarine.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<p class="mb-5"> 제휴문의 값 들어가는 부분 </p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>

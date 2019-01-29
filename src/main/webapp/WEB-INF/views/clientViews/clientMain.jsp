@@ -63,11 +63,11 @@
 							</ul>
 						</li>
 					
-						<li class='sub-menu'><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
+						<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
 								<li><a href="myPage">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="#">메뉴관리</a></li>
+								<li><a href="my_menuPage">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -162,17 +162,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">로그인</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/cabin.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
+						<p class="mb-5">로그인 값 들어가는 부분</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>
@@ -190,17 +181,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">회원가입</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/cake.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
+						<p class="mb-5">회원가입 값 들어가는 부분</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>
@@ -280,17 +262,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/submarine.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<p class="mb-5"> 제휴문의 값 들어가는 부분 </p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>

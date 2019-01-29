@@ -58,6 +58,11 @@ public class ClientController {
 		return "clientViews/my_salesPage";
 	}
 	
+	@RequestMapping("my_menuPage")
+	public String my_menuPage() {
+		return "clientViews/my_menuPage";
+	}
+	
 	@RequestMapping("my_mapPage")
 	public String my_mapPage() {
 		return "clientViews/my_mapPage";

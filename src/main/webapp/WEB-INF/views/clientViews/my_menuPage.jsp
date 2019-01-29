@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>오시는길 페이지</title>
+<title>매출현황 페이지</title>
 
 <!-- 드롭다운 -->
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
@@ -35,11 +35,7 @@
 	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="clientMain">KHC</a>
-			<button
-				class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
-				type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
+			<button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				카테고리<i class="fas fa-bars"></i>
 			</button>
 
@@ -74,7 +70,7 @@
 				</ul>
 			</div>
 		</div>
-			<h6 style="color:white;">${regist_dto.member_name } 님  환영합니다.</h6>
+		<h6 style="color:white;">${regist_dto.member_name } 님  환영합니다.</h6>
 
 	</nav>
 
@@ -87,7 +83,7 @@
 					<a href="myPage">
 					<i class="fa fa-file"></i><span>내 업체 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
-				<li class="my_salesPage">
+				<li class="sub-menu">
 					<a href="my_salesPage">
 					<i class="fa fa-bar-chart-o"></i><span>매출현황</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
@@ -99,13 +95,11 @@
 					<a href="my_mapPage">
 					<i class="fa fa-map-marker"></i><span>오시는길</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
-
 			</ul>
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
 	
-	<!-- 지도나오는 부분 -->
 		<br>
 		<br>
 		<br>
@@ -115,22 +109,21 @@
 		<br>
 		<div class="row justify-content-center">
 			<div>
-				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/오시는길.png" alt="">
-				<h2 class="text-center text-uppercase text-secondary mb-0">오시는 길</h2>
+				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/메뉴관리.png" alt="">
+				<h2 class="text-center text-uppercase text-secondary mb-0">메뉴관리</h2>
 			</div>
 		</div>
 		
 		<br>
 		
 		<div class="row justify-content-center" style="margin-bottom: 1000px;">	
-			<div>
-				<div style="height:400px; width:400px;" id="map"></div>
-			</div>
+		
+		여기다가 메뉴값 넣으면됌
+		
 		</div>
-
 	
 	<!-- Footer -->
-	<footer class="footer text-center" style="margin-bottom: 0px;">
+ 	<footer class="footer text-center">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 mb-5 mb-lg-0">
@@ -148,7 +141,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 	<!-- 제휴문의 모달창6 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
 		<div class="portfolio-modal-dialog bg-white">
@@ -188,18 +181,6 @@
 			$('ul', this).stop().slideUp(200);
 		});
 	</script>
-
- 	<!-- 지도api -->
-	<script>
-    		  var map;
-   		   function initMap() {
-    		    map = new google.maps.Map(document.getElementById('map'), {
-     		     center: {lat: 37.500653, lng: 127.034143},
-      		    zoom: 17
-      		  });
-     		 }
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZJabmz4nl1CgHEFdKOc_KqapQt7N1m-s&callback=initMap" async defer></script>
 
 </body>
 </html>

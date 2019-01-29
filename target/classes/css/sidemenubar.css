@@ -17,7 +17,7 @@ body {
 }
 .sidebar {
   width: 240px;
-  height: 190%;
+  height: 100%;
   background: #293949;
   position: absolute;
   -webkit-transition: all 0.3s ease-in-out;

@@ -37,7 +37,6 @@
 
 <!-- 게시판 style --> 
 <style>
-
 /* boardcss_list 에서 사용하는 글 목록 테이블 크기*/
 .boardcss_list_table { width: 100%; }
 
@@ -90,11 +89,11 @@
 							<li><a href="review_board_list">이용후기</a></li>
 						</ul></li>
 
-					<li class='sub-menu'><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
+					<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 						<ul>
 							<li><a href="myPage">내 업체 정보</a></li>
 							<li><a href="my_salesPage">매출현황</a></li>
-							<li><a href="#">메뉴관리</a></li>
+							<li><a href="my_menuPage">메뉴관리</a></li>
 							<li><a href="my_mapPage">오시는길</a></li>
 						</ul>
 					</li>
@@ -102,7 +101,7 @@
 				</ul>
 			</div>
 		</div>
-		<h3 class="text-uppercase mb-1">${regist_dto.member_name } 님  환영합니다.</h3>
+			<h6 style="color:white;">${regist_dto.member_name } 님  환영합니다.</h6>
 	</nav>
 	
 	
@@ -112,12 +111,13 @@
 	
 	<!-- Header -->
 	<header class="masthead bg-primary text-white text-center">
+		<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/건의사항.png" alt="">
 	<h2>건의사항 게시판</h2>
 	</header>
 	
 	
 	<section class="portfolio" id="portfolio">
-	<div class="container">
+	<div class="container" style="height: 700px;">
 	<form class="boardcss_list_table" action="complain_insertform">
 		<select id="condition">
 			<option value="전체" <c:if test="${Name eq '전체'}">selected</c:if>>전체</option>
@@ -204,17 +204,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/submarine.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<p class="mb-5"> 제휴문의 값 들어가는 부분 </p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>

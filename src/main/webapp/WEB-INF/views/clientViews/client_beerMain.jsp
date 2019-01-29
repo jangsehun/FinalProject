@@ -65,11 +65,11 @@
 							</ul>
 						</li>
 					
-						<li class='sub-menu'><a href="">마이페이지<i class='fa fa-angle-down'></i></a>
+						<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
 								<li><a href="myPage">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="#">메뉴관리</a></li>
+								<li><a href="my_menuPage">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -155,9 +155,7 @@
 			</div>
 		</div>
 	</footer>
-
 	<!-- 모달창들-->
-
 	<!-- 로그인 모달창1 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
 		<div class="portfolio-modal-dialog bg-white">
@@ -169,17 +167,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">로그인</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/cabin.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
+						<p class="mb-5">로그인 값 들어가는 부분</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>
@@ -197,17 +186,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">회원가입</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/cake.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
+						<p class="mb-5">회원가입 값 들어가는 부분</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>
@@ -228,14 +208,8 @@
 						<img class="img-fluid mb-5"
 							src="${pageContext.request.contextPath}/resources/img/맥주창고.jpg"
 							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<p class="mb-5">매일매일 메뉴가 바뀌는 가성비 최고의 점심뷔페입니다.</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"><i class="fa fa-close"></i>Close</a>
 					</div>
 				</div>
 			</div>
@@ -253,17 +227,9 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">7GRAM</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/7gram.jpg"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<img class="img-fluid mb-5" src="${pageContext.request.contextPath}/resources/img/7gram.jpg" alt="">
+						<p class="mb-5">KH학생들을 위해 쿠폰을 판매하고있는 7GRAM 카페 입니다.</p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"><i class="fa fa-close"></i>Close</a>
 					</div>
 				</div>
 			</div>
@@ -281,17 +247,9 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">요술포차</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/요술포차.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<img class="img-fluid mb-5" src="${pageContext.request.contextPath}/resources/img/요술포차.png" alt="">
+						<p class="mb-5">KH학생들에게 할인 메뉴가격 적용! 예약제로 운영됩니다. </p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"><i class="fa fa-close"></i>Close</a>
 					</div>
 				</div>
 			</div>
@@ -309,17 +267,8 @@
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
 						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5"
-							src="${pageContext.request.contextPath}/resources/img/portfolio/submarine.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close
-						</a>
+						<p class="mb-5"> 제휴문의 값 들어가는 부분 </p>
+						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
 					</div>
 				</div>
 			</div>
