@@ -25,7 +25,7 @@ body {
   -o-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  z-index: 100;
+  z-index: 100; 
 }
 .sidebar #leftside-navigation ul,
 .sidebar #leftside-navigation ul ul {
