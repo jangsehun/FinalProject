@@ -79,7 +79,7 @@
 	</nav>
 
 	<!-- 왼쪽 메뉴바 -->
-	<aside class="sidebar" style="margin-top :91px;">
+	<aside class="sidebar">
 	<br>
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content">
@@ -99,34 +99,28 @@
 					<a href="my_mapPage">
 					<i class="fa fa-map-marker"></i><span>오시는길</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
-
 			</ul>
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
 	
 	<!-- 지도나오는 부분 -->
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+	<div  style="margin-top:200px; margin-bottom: 1500px;">
 		<div class="row justify-content-center">
 			<div>
 				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/오시는길.png" alt="">
-				<h2 class="text-center text-uppercase text-secondary mb-0">오시는 길</h2>
+				<h2 class="text-center text-uppercase text-secondary mb-0">오시는길</h2>
 			</div>
 		</div>
 		
 		<br>
 		
-		<div class="row justify-content-center" style="margin-bottom: 1000px;">	
+		<div class="row justify-content-center">	
 			<div>
 				<div style="height:400px; width:400px;" id="map"></div>
-			</div>
+			</div>	
 		</div>
+	</div>
 
 	
 	<!-- Footer -->

@@ -43,7 +43,7 @@
 				aria-label="Toggle navigation">
 				카테고리<i class="fas fa-bars"></i>
 			</button>
-			
+			 
 			<!-- 드롭다운 -->
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul>

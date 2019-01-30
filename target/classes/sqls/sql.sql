@@ -198,6 +198,12 @@ CREATE TABLE complain_board (
 );
 
 INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'맥주창고','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'맥주창고','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'요술포차','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'맥주창고','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'7Gram','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'요술포차','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
+INSERT INTO complain_board VALUES(complain_board_seq.NEXTVAL,'맥주창고','건의사항 게시판 제목','건의사항 게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
 SELECT * FROM complain_board;
 
 

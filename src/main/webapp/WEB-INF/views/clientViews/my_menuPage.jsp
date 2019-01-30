@@ -75,7 +75,7 @@
 	</nav>
 
 	<!-- 왼쪽 메뉴바 -->
-	<aside class="sidebar" style="margin-top :91px;">
+	<aside class="sidebar">
 	<br>
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content">
@@ -99,14 +99,7 @@
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
-	
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		<div  style="margin-top:200px; margin-bottom: 1500px;">
 		<div class="row justify-content-center">
 			<div>
 				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/메뉴관리.png" alt="">
@@ -115,11 +108,11 @@
 		</div>
 		
 		<br>
-		
-		<div class="row justify-content-center" style="margin-bottom: 1000px;">	
-		
-		여기다가 메뉴값 넣으면됌
-		
+			<div class="row justify-content-center">	
+			
+			여기다가 메뉴값 넣으면됌
+			
+			</div>
 		</div>
 	
 	<!-- Footer -->
