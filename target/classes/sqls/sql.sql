@@ -304,7 +304,7 @@ INSERT INTO menu VALUES(menu_seq.nextval,8,'아메리카노',2000,NULL,'좋은 �
 
 SELECT * FROM menu;
 
---DELETE FROM menu WHERE client_no = 8;--
+--DELETE FROM menu WHERE client_no = 8;-- 
 
 --SELECT * FROM client WHERE member_no = 8;--
 
