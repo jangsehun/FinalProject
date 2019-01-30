@@ -60,7 +60,7 @@
 
 						<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
-								<li><a href="myPage">내 업체 정보</a></li>
+								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
 								<li><a href="my_menuPage">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
@@ -80,7 +80,7 @@
 		<div id="leftside-navigation" class="nano">
 			<ul class="nano-content">
 				<li class="sub-menu">
-					<a href="myPage">
+					<a href="myPage?member_no=${regist_dto.member_no }">
 					<i class="fa fa-file"></i><span>내 업체 정보</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">

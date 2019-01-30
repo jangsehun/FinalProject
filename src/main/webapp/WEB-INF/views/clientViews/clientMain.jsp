@@ -65,7 +65,7 @@
 					
 						<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 							<ul>
-								<li><a href="myPage">내 업체 정보</a></li>
+								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
 								<li><a href="my_menuPage">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
@@ -254,16 +254,53 @@
 	<!-- 제휴문의 모달창6 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
 		<div class="portfolio-modal-dialog bg-white">
-			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
-				href="#"> <i class="fa fa-3x fa-times"></i>
-			</a>
+			<a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#"> <i class="fa fa-3x fa-times"></i></a>
 			<div class="container text-center">
 				<div class="row">
 					<div class="col-lg-8 mx-auto">
 						<h2 class="text-secondary text-uppercase mb-0">제휴문의</h2>
 						<hr class="star-dark mb-5">
-						<p class="mb-5"> 제휴문의 값 들어가는 부분 </p>
-						<a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#"> <i class="fa fa-close"></i> Close </a>
+							<br>
+							<br>
+							<p class="mb-5">
+								<form action="client_insert?member_no=${client_dto.member_no }" method="post">
+									<table class="table table-sm" style="margin-bottom: 170px;">
+										<tbody>
+											<tr>
+												<th>업체 이름</th>
+												<td><input type="text" name="client_name_store"></td>
+											</tr>
+											<tr>
+												<th>업체 전화번호</th>
+												<td><input type="text" name="client_phone_store"></td>
+											</tr>
+											<tr>
+												<th>업체 주소</th>
+												<td><input type="text" name="client_address"></td>
+											</tr>
+											<tr>
+												<th>업체 등록</th>
+												<td><input type="radio" name="client_registration" id="radio1" value="Y">예
+													<input type="radio" name="client_registration" id="radio1" value="N">아니오</td>
+											</tr>
+											<tr>
+												<th>업체 최대 수용인원</th>
+												<td><input type="text" name="client_max_client"></td>
+											</tr>
+											<tr>
+												<th>업체 예약</th>
+												<td><input type="radio" name="client_reservation" id="radio2" value="Y">예
+												<input type="radio" name="client_reservation" id="radio2" value="N">아니오</td>
+											</tr>
+											<tr>
+												<th></th>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>						
+										<input type="submit" class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" value="문의신청">
+								</form>
+
 					</div>
 				</div>
 			</div>

@@ -19,11 +19,13 @@
 
 </form>
 
+
+
+
+
+
 	<h3>컨트롤러 TEST</h3>
 	<a href="home/test">homeControllerTest</a> <br>
-	<a href="user/memberMain">userControllerTest</a> <br>
-	<a href="academy/test">academyControllerTest</a> <br>
-	<a href="client/clientMain">clientMain</a> <br>
 	
 </body>
 </html>

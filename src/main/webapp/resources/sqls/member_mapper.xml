@@ -17,5 +17,9 @@
    <select id="login" resultType="RegistDto" parameterType="RegistDto">
       SELECT member_name,member_id,member_password FROM member WHERE member_id= #{member_id} AND member_password =#{member_password}
    </select>
+   
+   <select id="loginInfo" parameterType="int" resultType="RegistDto">	
+	SELECT * FROM MEMBER WHERE MEMBER_NO = #{member_no}
+</select>
 
 </mapper>

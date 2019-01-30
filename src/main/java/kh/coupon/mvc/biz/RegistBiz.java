@@ -14,4 +14,6 @@ public interface RegistBiz {
    public int regist_insert(RegistDto regist_dto);
    
    public RegistDto login(String member_id,String member_password);
+   
+   public RegistDto loginInfo(int member_no);
 }

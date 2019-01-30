@@ -181,7 +181,7 @@ SELECT * FROM member;
 
 
 
-/*건의사항게시판*/
+-----------------건의사항게시판---------------------------
 DROP SEQUENCE complain_board_seq;
 DROP TABLE complain_board;
 CREATE SEQUENCE complain_board_seq;
@@ -208,7 +208,7 @@ SELECT * FROM complain_board;
 
 
 
-/*리뷰게시판*/
+-----------------이용후기게시판---------------------------
 DROP TABLE review_board;
 DROP SEQUENCE review_board_seq;
 CREATE SEQUENCE review_board_seq;
@@ -226,4 +226,88 @@ CREATE TABLE review_board (
 
 INSERT INTO review_board VALUES(review_board_seq.NEXTVAL,'맥주창고','이용후기게시판 제목','이용후기게시판 내용부분 테스트중','성원실',SYSDATE,'','0','0');
 SELECT * FROM review_board;
+
+
+
+
+-----------------제휴업체 신청DB---------------------------
+
+DROP TABLE client;
+DROP SEQUENCE client_no_seq;
+
+CREATE SEQUENCE client_no_seq;
+
+
+CREATE TABLE client (
+   client_no   NUMBER   NOT NULL PRIMARY KEY,                        
+   member_no   NUMBER   NOT NULL,                                       
+   client_name_store   VARCHAR2(500)   NOT NULL,            
+   client_phone_store   VARCHAR2(500)   NULL,               
+   client_address   VARCHAR2(500)   NOT NULL,               
+   client_registration   VARCHAR2(2)   NOT NULL,            
+   client_max_client   VARCHAR2(500)   NULL,               
+   client_reservation   VARCHAR2(2)   NOT NULL,
+   --client_enabled추가 (학원에서 제휴업체 승인을 해줘야 게시판 등록 가능)--
+   
+   CONSTRAINT client_registration_chk CHECK(client_registration IN ('Y','N')),
+   CONSTRAINT client_reservation_chk CHECK(client_reservation IN ('Y','N'))
+   );
+
+
+
+INSERT INTO client VALUES (client_no_seq.NEXTVAL, '1', '미술포차', '02-223-3337', '서울시 강남구 오삼동 12-11', 'Y', '1200', 'Y' );
+
+DELETE FROM client WHERE client_no = 1;
+
+
+SELECT * FROM client;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------메뉴 db--------------------------------------
+
+CREATE SEQUENCE menu_seq;
+
+CREATE TABLE menu(
+   menu_no NUMBER NOT NULL,
+   client_no NUMBER NOT NULL,
+   
+   menu_title   VARCHAR2(500)   NOT NULL,         --메뉴 이름   
+   menu_price   NUMBER   NOT NULL,               --메뉴 가격       
+   menu_image   VARCHAR2(500)   NULL,            --메뉴 이미지             
+   menu_detail   VARCHAR2(500)   NULL,            --메뉴 상세정보    
+   menu_create_date DATE NOT NULL            --메뉴 등록날짜
+);
+
+INSERT INTO menu VALUES(menu_seq.nextval,8,'아메리카노',2000,NULL,'좋은 원두를 쓴다.',SYSDATE);
+
+SELECT * FROM menu;
+
+--DELETE FROM menu WHERE client_no = 8;--
+
+--SELECT * FROM client WHERE member_no = 8;--
+
+
+
 

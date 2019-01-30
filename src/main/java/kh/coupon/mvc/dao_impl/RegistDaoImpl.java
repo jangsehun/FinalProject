@@ -58,5 +58,11 @@ public class RegistDaoImpl implements RegistDao {
       return res;
    }
 
+@Override
+public RegistDto loginInfo(int member_no) {
+	RegistDto res = sqlSessionTemplate.selectOne(namespace+"loginInfo",member_no);
+	return res;
+}
+
 }
 

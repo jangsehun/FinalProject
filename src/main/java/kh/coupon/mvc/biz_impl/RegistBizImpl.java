@@ -35,5 +35,10 @@ public class RegistBizImpl implements RegistBiz {
       return regist_dao.login(member_id, member_password);
    }
 
+	@Override
+	public RegistDto loginInfo(int member_no) {
+		return regist_dao.loginInfo(member_no);
+	}
+
 }
 

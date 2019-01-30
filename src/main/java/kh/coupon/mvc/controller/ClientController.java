@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import kh.coupon.mvc.biz.RegistBiz;
 import kh.coupon.mvc.biz.ReviewBiz;
+import kh.coupon.mvc.biz.ClientBiz;
 import kh.coupon.mvc.biz.ComplainBiz;
+import kh.coupon.mvc.dto.ClientDto;
 import kh.coupon.mvc.dto.ComplainDto;
 import kh.coupon.mvc.dto.RegistDto;
 import kh.coupon.mvc.dto.ReviewDto;
@@ -26,8 +28,11 @@ public class ClientController {
 	private ComplainBiz complain_biz;
 	@Autowired
 	private ReviewBiz review_biz;
+	@Autowired
+	private ClientBiz client_biz;
 	
-
+	
+	
 	@RequestMapping("clientMain")
 	public String clientMain() {
 		return "clientViews/clientMain";
@@ -47,28 +52,10 @@ public class ClientController {
 	public String client_sevenMain() {
 		return "clientViews/client_sevenMain";
 	}
-	
-	@RequestMapping("myPage")
-	public String mypage() {
-		return "clientViews/myPage";
-	}
-	
-	@RequestMapping("my_salesPage")
-	public String my_salesPage() {
-		return "clientViews/my_salesPage";
-	}
-	
-	@RequestMapping("my_menuPage")
-	public String my_menuPage() {
-		return "clientViews/my_menuPage";
-	}
-	
-	@RequestMapping("my_mapPage")
-	public String my_mapPage() {
-		return "clientViews/my_mapPage";
-	}
-	
 
+	
+//==================================회원가입로그인==================================================
+	
 	@RequestMapping(value = "registform")
 	public String registform() {
 		return "clientViews/clientRegist";
@@ -95,10 +82,44 @@ public class ClientController {
 			return "index";
 		}
 	}
+	
+	//member가 제휴 업체 문의
+	@RequestMapping(value="client_insert", method=RequestMethod.POST)
+	public String client_insert(Model model, ClientDto dto) {
 
+		int res = client_biz.client_insert(dto);
+		if(res > 0) {
+			model.addAttribute("client_dto", client_biz.selectOne(dto.getMember_no()));
+			return "clientViews/clientMain";
+		}
+		return "clientViews/clientMain";	
+		}
 	
 	
+//==================================마이페이지관련==================================================	
 	
+	@RequestMapping("myPage")
+	public String mypage(Model model, int member_no) {
+		model.addAttribute("regist_dto",regist_biz.loginInfo(member_no));
+		return "clientViews/myPage";
+	}
+	
+	@RequestMapping("my_salesPage")
+	public String my_salesPage() {
+		return "clientViews/my_salesPage";
+	}
+	
+	@RequestMapping("my_menuPage")
+	public String my_menuPage() {
+		return "clientViews/my_menuPage";
+	}
+	
+	@RequestMapping("my_mapPage")
+	public String my_mapPage() {
+		return "clientViews/my_mapPage";
+	}
+
+//==================================건의사항게시판==================================================
 	
 	@RequestMapping(value = "complain_board_list")
 	public String complain_board_list(Model model) {
@@ -175,6 +196,8 @@ public class ClientController {
 	
 	
 	
+	
+//==================================이용후기게시판============================================	
 	
 	@RequestMapping("review_board_list")
 	public String review_board_list(Model model) {
