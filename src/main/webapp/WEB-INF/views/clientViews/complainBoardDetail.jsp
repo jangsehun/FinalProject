@@ -62,9 +62,9 @@
 
 					<li><a href="#">마이페이지<i class='fa fa-angle-down'></i></a>
 						<ul>
-								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
+							<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 							<li><a href="my_salesPage">매출현황</a></li>
-							<li><a href="my_menuPage">메뉴관리</a></li>
+							<li><a href="menu_list?client_no=${client_dto.client_no }">메뉴관리</a></li>
 							<li><a href="my_mapPage">오시는길</a></li>
 						</ul>
 					</li>

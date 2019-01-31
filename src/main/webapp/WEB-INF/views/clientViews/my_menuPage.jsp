@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +29,25 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sidemenubar.css">
 
 </head>
+
+<!-- 메뉴목록 style --> 
+<style>
+/* 화면에 보여지는 글 목록 테이블 */
+.list_table { width: 100%; margin-left: 350px; margin-right: 100px; margin-bottom: 30px;}
+
+/* 화면에 보여지는 caption */
+.list_table caption { display: none; }
+
+/* list_table 에서 사용되는 thead */
+.list_table thead th { text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; background: #faf9fa; }
+
+/* list_table 에서 사용되는 tbody */
+.list_table td { text-align: center;  border-bottom: 1px solid #e5e5e5; padding: 5px 0; }
+
+</style>
+
+</head>
+
 <body>
 
 	<!-- Navigation -->
@@ -62,7 +81,7 @@
 							<ul>
 								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="my_menuPage">메뉴관리</a></li>
+								<li><a href="menu_list?client_no=${client_dto.client_no }">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -88,7 +107,7 @@
 					<i class="fa fa-bar-chart-o"></i><span>매출현황</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
-					<a href="my_menuPage">
+					<a href="menu_list?client_no=${client_dto.client_no }">
 					<i class="fa fa fa-tasks"></i><span>메뉴 관리</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
@@ -99,7 +118,7 @@
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
-		<div  style="margin-top:200px; margin-bottom: 1500px;">
+		<div  style="margin-top:200px; margin-bottom: 738px;">
 		<div class="row justify-content-center">
 			<div>
 				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/메뉴관리.png" alt="">
@@ -108,10 +127,45 @@
 		</div>
 		
 		<br>
-			<div class="row justify-content-center">	
-			
-			여기다가 메뉴값 넣으면됌
-			
+		<br>
+			<div class="row justify-content-center" >	
+				<table class="list_table">
+						<colgroup>
+							<col width="10%" />
+							<col width="20%" />
+							<col width="20%" />
+							<col width="20%" />
+						</colgroup>
+						<thead> 
+							<tr> 
+								<th>메뉴번호</th>
+								<th>메뉴이름</th>
+								<th>메뉴가격</th>
+								<th>메뉴만든날짜</th>
+							</tr>
+						</thead>
+				
+							<c:choose>
+								<c:when test="${empty menu_list }">
+									<tr>
+										<td>등록된 메뉴 없음</td>
+									</tr>
+								</c:when>
+								<c:otherwise>
+								<c:forEach items="${menu_list }" var="menu_dto">
+										<tr>
+										<td>${menu_dto.menu_no }</td>
+										<td><a href="menu_detail?menu_no=${menu_dto.menu_no}">${menu_dto.menu_title }</a></td>
+										<td>${menu_dto.menu_price }</td>
+										<td><fmt:formatDate value="${menu_dto.menu_create_date }" pattern="yyyy.MM.dd"/></td>
+										</tr>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+
+				</table>
+
+							<input type="button" value="메뉴추가" onclick="location.href='menu_insertForm'" class="btn btn-primary"/>
 			</div>
 		</div>
 	

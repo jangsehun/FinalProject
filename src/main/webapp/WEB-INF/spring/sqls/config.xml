@@ -8,15 +8,14 @@
 		<typeAlias type="kh.coupon.mvc.dto.ComplainDto" alias="ComplainDto"/>
 		<typeAlias type="kh.coupon.mvc.dto.ReviewDto" alias="ReviewDto"/>
 		<typeAlias type="kh.coupon.mvc.dto.ClientDto" alias="ClientDto"/>
+		<typeAlias type="kh.coupon.mvc.dto.MenuDto" alias="MenuDto"/>		
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="/sqls/home_mapper.xml"/>
-		<mapper resource="/sqls/user_mapper.xml"/>
-		<mapper resource="/sqls/academy_mapper.xml"/>
 		<mapper resource="/sqls/client_mapper.xml"/>
 		<mapper resource="/sqls/member_mapper.xml"/>
 		<mapper resource="/sqls/complain_mapper.xml"/>
 		<mapper resource="/sqls/review_mapper.xml"/>
+		<mapper resource="/sqls/menu_mapper.xml"/>
 	</mappers>
 </configuration>

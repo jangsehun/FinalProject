@@ -29,6 +29,13 @@
 <!-- Custom styles for this template -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/freelancer.min.css">
 
+<!-- 제휴업체문의 모달창 style -->
+<style>
+th{width:30%; text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; background: #faf9fa;}
+td{width:70%; text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; }
+</style>
+
+
 </head>
 <body>
 
@@ -67,7 +74,7 @@
 							<ul>
 								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="my_menuPage">메뉴관리</a></li>
+								<li><a href="menu_list?client_no=${client_dto.client_no }">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -291,10 +298,6 @@
 												<th>업체 예약</th>
 												<td><input type="radio" name="client_reservation" id="radio2" value="Y">예
 												<input type="radio" name="client_reservation" id="radio2" value="N">아니오</td>
-											</tr>
-											<tr>
-												<th></th>
-												<td></td>
 											</tr>
 										</tbody>
 									</table>						

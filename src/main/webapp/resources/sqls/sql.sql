@@ -255,7 +255,7 @@ CREATE TABLE client (
 
 
 
-INSERT INTO client VALUES (client_no_seq.NEXTVAL, '1', '미술포차', '02-223-3337', '서울시 강남구 오삼동 12-11', 'Y', '1200', 'Y' );
+INSERT INTO client VALUES (client_no_seq.NEXTVAL, '1', '원실포차', '02-123-4567', '서울시 송파구  송파대로 111', 'Y', '50', 'Y' );
 
 DELETE FROM client WHERE client_no = 1;
 
@@ -287,7 +287,10 @@ SELECT * FROM client;
 
 ------------------------------메뉴 db--------------------------------------
 
-CREATE SEQUENCE menu_seq;
+DROP TABLE menu;
+DROP SEQUENCE menu_no_seq;
+
+CREATE SEQUENCE menu_no_seq;
 
 CREATE TABLE menu(
    menu_no NUMBER NOT NULL,
@@ -300,7 +303,7 @@ CREATE TABLE menu(
    menu_create_date DATE NOT NULL            --메뉴 등록날짜
 );
 
-INSERT INTO menu VALUES(menu_seq.nextval,8,'아메리카노',2000,NULL,'좋은 원두를 쓴다.',SYSDATE);
+INSERT INTO menu VALUES(menu_no_seq.nextval,'1','김치찌개',5000,NULL,'돼지고기가 들어간 김치찌개',SYSDATE);
 
 SELECT * FROM menu;
 

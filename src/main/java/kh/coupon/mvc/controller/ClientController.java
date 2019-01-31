@@ -13,8 +13,10 @@ import kh.coupon.mvc.biz.RegistBiz;
 import kh.coupon.mvc.biz.ReviewBiz;
 import kh.coupon.mvc.biz.ClientBiz;
 import kh.coupon.mvc.biz.ComplainBiz;
+import kh.coupon.mvc.biz.MenuBiz;
 import kh.coupon.mvc.dto.ClientDto;
 import kh.coupon.mvc.dto.ComplainDto;
+import kh.coupon.mvc.dto.MenuDto;
 import kh.coupon.mvc.dto.RegistDto;
 import kh.coupon.mvc.dto.ReviewDto;
 
@@ -30,6 +32,8 @@ public class ClientController {
 	private ReviewBiz review_biz;
 	@Autowired
 	private ClientBiz client_biz;
+	@Autowired
+	private MenuBiz menu_biz;
 	
 	
 	
@@ -74,9 +78,11 @@ public class ClientController {
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String login(Model model, String member_id, String member_password, HttpSession session) {
+		System.out.println("member_id"+member_id+"member_pw"+member_password);
 		RegistDto regist_dto = regist_biz.login(member_id, member_password);
 		if (regist_dto != null) {
 			session.setAttribute("regist_dto", regist_dto);
+			session.setAttribute("client_dto", client_biz.selectOne(regist_dto.getMember_no()));
 			return "clientViews/clientMain";
 		} else {
 			return "index";
@@ -110,9 +116,102 @@ public class ClientController {
 	}
 	
 	@RequestMapping("my_menuPage")
-	public String my_menuPage() {
+	public String my_menuPage(Model model, int client_no) {
+		System.out.println(client_no);
+		model.addAttribute("menu_list", menu_biz.selectList(client_no));
 		return "clientViews/my_menuPage";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//메뉴 리스트
+	@RequestMapping("menu_list")
+	public String List(Model model, int client_no) {
+		model.addAttribute("menu_list", menu_biz.selectList(client_no));
+		
+		return "clientViews/my_menuPage";
+	}
+
+	
+	@RequestMapping("menu_detail")
+	public String selectOne(Model model, int menu_no) {
+		model.addAttribute("menu_dto", menu_biz.selectOne(menu_no));
+		
+		return "clientViews/my_menuDetail";
+	}
+	
+	@RequestMapping("menu_updateForm")
+	public String updateForm(Model model, int menu_no) {
+		model.addAttribute("menu_dto", menu_biz.selectOne(menu_no));
+		return "clientViews/my_menuUpdate";
+	
+	}
+	
+	
+	@RequestMapping("menu_update")
+	public String update(Model model, MenuDto dto, int menu_no) {
+		System.out.println(dto.getMenu_no());
+		System.out.println(menu_no);
+		int res = menu_biz.update(dto);
+		
+		if(res > 0) {
+			model.addAttribute("menu_dto", menu_biz.selectOne(menu_no));
+			return "clientViews/my_menuDetail";
+		}
+		return "clientViews/my_menuUpdate";
+	}
+		
+	@RequestMapping("menu_delete")
+	public String delete(Model model, int menu_no, int client_no) {
+		menu_biz.delete(menu_no);
+		model.addAttribute("menu_list", menu_biz.selectList(client_no));
+		
+		return "clientViews/my_menuPage";
+	}
+	
+	@RequestMapping("menu_insertForm")
+	public String menuInsertForm() {
+		return "clientViews/my_menuInsert";
+	}
+	
+	@RequestMapping("menu_insert")
+	public String insert(Model model, MenuDto dto, int client_no) {
+		int res = menu_biz.insert(dto);
+		
+		if(res > 0) {
+			model.addAttribute("menu_list", menu_biz.selectList(client_no));
+			return "clientViews/my_menuPage";
+		}
+		return "clientViews/my_menuInsert";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping("my_mapPage")
 	public String my_mapPage() {

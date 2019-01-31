@@ -15,7 +15,7 @@
    </insert>
    
    <select id="login" resultType="RegistDto" parameterType="RegistDto">
-      SELECT member_name,member_id,member_password FROM member WHERE member_id= #{member_id} AND member_password =#{member_password}
+      SELECT member_no,member_name,member_id,member_password FROM member WHERE member_id= #{member_id} AND member_password =#{member_password}
    </select>
    
    <select id="loginInfo" parameterType="int" resultType="RegistDto">	

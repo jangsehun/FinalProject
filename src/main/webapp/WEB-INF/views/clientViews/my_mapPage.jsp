@@ -66,7 +66,7 @@
 							<ul>
 								<li><a href="myPage?member_no=${regist_dto.member_no }">내 업체 정보</a></li>
 								<li><a href="my_salesPage">매출현황</a></li>
-								<li><a href="my_menuPage">메뉴관리</a></li>
+								<li><a href="menu_list?client_no=${client_dto.client_no }">메뉴관리</a></li>
 								<li><a href="my_mapPage">오시는길</a></li>
 							</ul>
 						</li>
@@ -92,7 +92,7 @@
 					<i class="fa fa-bar-chart-o"></i><span>매출현황</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
-					<a href="my_menuPage">
+					<a href="menu_list?client_no=${client_dto.client_no }">
 					<i class="fa fa fa-tasks"></i><span>메뉴 관리</span><i class="arrow fa fa-angle-right pull-right"></i></a>
 				</li>
 				<li class="sub-menu">
@@ -105,7 +105,7 @@
 	<!-- 왼쪽메뉴바 끝 -->
 	
 	<!-- 지도나오는 부분 -->
-	<div  style="margin-top:200px; margin-bottom: 1500px;">
+	<div  style="margin-top:200px; margin-bottom: 804px;">
 		<div class="row justify-content-center">
 			<div>
 				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/오시는길.png" alt="">

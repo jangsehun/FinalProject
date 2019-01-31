@@ -22,7 +22,11 @@ public class ClientDao_Impl implements ClientDao{
 
 	@Override
 	public ClientDto selectOne(int member_no) {
-		return sqlSession.selectOne(namespace + "client_selectone", member_no);
+		System.out.println(member_no);
+		ClientDto dto = sqlSession.selectOne(namespace + "client_selectone", member_no);
+		System.out.println("error");
+		System.out.println();
+		return dto;
 	}
 	
 	

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +29,16 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/sidemenubar.css">
 
 </head>
+
+<!-- 메뉴목록 style --> 
+<style>
+th{width:100%; text-align: center; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; background: #faf9fa;}
+td{width:100%; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; padding: 8px 0; }
+</style>
+
+
+</head>
+
 <body>
 
 	<!-- Navigation -->
@@ -99,24 +109,50 @@
 		</div>
 	</aside>
 	<!-- 왼쪽메뉴바 끝 -->
-		<div  style="margin-top:200px; margin-bottom: 1190px;">
+		<div  style="margin-top:200px; margin-bottom: 759px;">
 		<div class="row justify-content-center">
 			<div>
-				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/매출현황.png" alt="">
-				<h2 class="text-center text-uppercase text-secondary mb-0">매출현황</h2>
+				<img class="img-fluid mb-5 d-block mx-auto" src="${pageContext.request.contextPath}/resources/img/메뉴관리.png" alt="">
+				<h2 class="text-center text-uppercase text-secondary mb-0">메뉴추가</h2>
 			</div>
 		</div>
 		
 		<br>
+		<br>
 			<div class="row justify-content-center">	
-			
-			여기다가 매출현황 값 넣으면됌
-			
+
+			<form action="menu_insert" method="post"  style="text-align: center;">
+			<input type="hidden" name="client_no" value="${client_dto.client_no }">
+									<table class="table table-sm">
+										<tbody>
+											<tr>
+												<th>메뉴이름</th>
+												<td><input type="text" name="menu_title" /></td>
+											</tr>
+											<tr>
+												<th>메뉴가격</th>
+												<td><input type="text" name="menu_price" /></td>
+											</tr>
+											<tr>
+											<th>메뉴이미지</th>
+												<td><input type="hidden" name="menu_image" /></td>
+											</tr>
+											<tr>
+												<th>메뉴상세정보</th>
+												<td><textarea rows="10" cols="60" id="editor" name="menu_detail"></textarea></td>
+											</tr>
+
+										</tbody>
+									</table>
+										<input type="submit"  value="추가" class="btn btn-primary">
+										<input type="button" onclick="location.href='menu_list?client_no=${client_dto.client_no }'" value="취소" class="btn btn-primary">		
+			</form>
+								
 			</div>
 		</div>
 	
 	<!-- Footer -->
-	<footer class="footer text-center">
+ 	<footer class="footer text-center">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 mb-5 mb-lg-0">
@@ -134,7 +170,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 	<!-- 제휴문의 모달창6 -->
 	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
 		<div class="portfolio-modal-dialog bg-white">
